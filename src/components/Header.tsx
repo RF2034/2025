@@ -42,8 +42,14 @@ export default function Header() {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-primary btn-sm md:btn-md">
-          <span className="hidden sm:inline">参加する</span>
+        <a 
+          href="https://docs.google.com/forms/d/e/1FAIpQLSesYwQXXWNX90l2bt0NdJZjcf1kyhF4QQneQpIcjQR1gqWsYQ/viewform?usp=dialog"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-primary btn-sm md:btn-md"
+        >
+          <span className="hidden sm:inline">参加フォーム</span>
+          <span className="sm:hidden">参加</span>
         </a>
       </div>
     </header>
