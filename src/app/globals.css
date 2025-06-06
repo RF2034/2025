@@ -3,6 +3,10 @@
   themes: pastel --default, aqua ;
 }
 
+@theme inline {
+  --font-biz-udp-: var(--font-biz-udp-);
+}
+
 /* モバイル向けカスタムスタイル */
 @media (max-width: 640px) {
   .hero-content {
