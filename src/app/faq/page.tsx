@@ -16,7 +16,7 @@ export default function FAQ() {
         
         <div className="max-w-4xl mx-auto">
           <div className="collapse collapse-arrow bg-base-200 mb-4">
-            <input type="radio" name="faq-accordion" defaultChecked />
+            <input type="radio" name="faq-accordion" defaultChecked aria-label="イベントの参加費はいくらですか？" />
             <div className="collapse-title text-xl font-medium">
               イベントの参加費はいくらですか？
             </div>
@@ -26,7 +26,7 @@ export default function FAQ() {
           </div>
           
           <div className="collapse collapse-arrow bg-base-200 mb-4">
-            <input type="radio" name="faq-accordion" />
+            <input type="radio" name="faq-accordion" aria-label="駐車場はありますか？" />
             <div className="collapse-title text-xl font-medium">
               駐車場はありますか？
             </div>
@@ -36,7 +36,7 @@ export default function FAQ() {
           </div>
           
           <div className="collapse collapse-arrow bg-base-200 mb-4">
-            <input type="radio" name="faq-accordion" />
+            <input type="radio" name="faq-accordion" aria-label="年齢制限はありますか？" />
             <div className="collapse-title text-xl font-medium">
               年齢制限はありますか？
             </div>
