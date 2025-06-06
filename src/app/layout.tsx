@@ -13,14 +13,6 @@ export const metadata: Metadata = {
     description: "廃校を舞台にした音楽イベント、ガッコウレイヴの公式サイトです。",
     url: "https://gakkou-rave.com",
     siteName: "ガッコウレイヴ",
-    images: [
-      {
-        url: "https://twemoji.maxcdn.com/v/latest/svg/1f3eb.svg",
-        width: 1200,
-        height: 630,
-        alt: "ガッコウレイヴのOG画像",
-      },
-    ],
     locale: "ja_JP",
     type: "website",
   }
