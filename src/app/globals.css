@@ -1,4 +1,30 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: pastel --default, aqua;
+  themes: pastel --default, aqua ;
+}
+
+/* モバイル向けカスタムスタイル */
+@media (max-width: 640px) {
+  .hero-content {
+    padding: 1rem;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* タッチ操作の改善 */
+@media (hover: none) {
+  .btn:hover {
+    transform: none;
+  }
+}
+
+/* フォントサイズの調整 */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
 }
