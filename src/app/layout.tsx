@@ -15,9 +15,9 @@ export const metadata: Metadata = {
     siteName: "ガッコウレイヴ",
     images: [
       {
-        url: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%' y='50%' style='dominant-baseline:central;text-anchor:middle;font-size:90px;'>🏫</text></svg>",
-        width: 100,
-        height: 100,
+        url: "https://twemoji.maxcdn.com/v/latest/svg/1f3eb.svg",
+        width: 1200,
+        height: 630,
         alt: "ガッコウレイヴのOG画像",
       },
     ],
