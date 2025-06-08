@@ -1,10 +1,12 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import VenueLink from "@/components/VenueLink";
+import { EVENT_INFO } from "@/constants/eventInfo";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "イベント概要 - ガッコウレイヴ2025",
-  description: "ガッコウレイヴ2025のイベント概要、開催日時、会場情報などをご確認いただけます。",
+  title: `イベント概要 - ${EVENT_INFO.title}`,
+  description: `${EVENT_INFO.title}のイベント概要、開催日時、会場情報などをご確認いただけます。`,
 };
 
 export default function About() {
@@ -18,24 +20,12 @@ export default function About() {
           <div className="card bg-base-100 shadow-xl">
             <div className="card-body">
               <h2 className="card-title">開催情報</h2>
-              <p>開催日 : 11/22, 23, 24（土, 日, 月祝）<br />
-
-                開催場所 :
-                <a 
-                  href="https://www.sarusho.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline text-primary-content hover:text-primary-content/80 hover:no-underline transition-all duration-200 cursor-pointer"
-                >
-                  泊まれる学校 さる小（群馬県利根郡みなかみ町相俣1744-15）
-                </a>
-                <br />
-                東京からの無料バス送迎あり！
-                <br />
-                予定費用：50,000円
-                <br/>
+              <p>
+                開催日 : {EVENT_INFO.dates}<br />
+                開催場所 : <VenueLink /><br />
+                東京からの無料バス送迎あり！<br />
+                予定費用：{EVENT_INFO.price}<br/>
               </p>
-
               <p>他 何書けばいいかアイデアください～～～！！！！</p>
             </div>
           </div>
@@ -46,7 +36,7 @@ export default function About() {
               
               <div className="space-y-4">
                 <div className="collapse collapse-arrow bg-base-200">
-                  <input type="radio" name="schedule-accordion" defaultChecked />
+                  <input type="radio" name="schedule-accordion" defaultChecked aria-label="1日目のスケジュール" />
                   <div className="collapse-title text-lg font-medium">
                     【1日目】金曜日 - Welcome to School
                   </div>
@@ -64,7 +54,7 @@ export default function About() {
                 </div>
 
                 <div className="collapse collapse-arrow bg-base-200">
-                  <input type="radio" name="schedule-accordion" />
+                  <input type="radio" name="schedule-accordion" aria-label="2日目のスケジュール" />
                   <div className="collapse-title text-lg font-medium">
                     【2日目】土曜日 - Full Experience
                   </div>
@@ -84,7 +74,7 @@ export default function About() {
                 </div>
 
                 <div className="collapse collapse-arrow bg-base-200">
-                  <input type="radio" name="schedule-accordion" />
+                  <input type="radio" name="schedule-accordion" aria-label="3日目のスケジュール" />
                   <div className="collapse-title text-lg font-medium">
                     【3日目】日曜日 - Farewell Celebration
                   </div>
@@ -108,7 +98,8 @@ export default function About() {
           <div className="card bg-base-100 shadow-xl">
             <div className="card-body">
               <h2 className="card-title">参加方法</h2>
-              <p>参加登録は、公式サイトから行えます。<br />
+              <p>
+                参加登録は、公式サイトから行えます。<br />
                 トップページまたはヘッダーの「参加登録はこちら」ボタンをクリックしてください。<br />
                 その後、googleフォームに必要事項を入力し、送信してください。<br />
                 参加登録後、詳細な情報をメールでお送りします。<br />
