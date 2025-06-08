@@ -15,7 +15,7 @@ export default function Home() {
               </h1>
               
               {/* キャッチコピー */}
-              <h2 className="mb-8 text-2xl md:text-3xl lg:text-4xl font-bold tebase-content">
+              <h2 className="mb-8 text-2xl md:text-3xl lg:text-4xl font-bold text-base-content">
                 廃校で、踊ろう
               </h2>
 
