@@ -48,8 +48,7 @@ export default function Header() {
           rel="noopener noreferrer"
           className="btn btn-primary btn-sm md:btn-md"
         >
-          <span className="hidden sm:inline">参加フォーム</span>
-          <span className="sm:hidden">参加</span>
+          <span className="">参加登録</span>
         </a>
       </div>
     </header>
