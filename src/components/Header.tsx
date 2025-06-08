@@ -1,6 +1,14 @@
+import { EVENT_INFO } from "@/constants/eventInfo";
 import Link from "next/link";
+import RegistrationButton from "./RegistrationButton";
 
 export default function Header() {
+  const navItems = [
+    { href: "/about", label: "概要", icon: "📋" },
+    { href: "/last-year", label: "昨年の様子", icon: "📸" },
+    { href: "/faq", label: "FAQ", icon: "❓" }
+  ];
+
   return (
     <header className="navbar bg-base-100 shadow-lg px-2 md:px-4">
       <div className="navbar-start">
@@ -25,31 +33,30 @@ export default function Header() {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-60 p-2 shadow-xl border"
           >
-            <li><Link href="/about" className="text-base py-3">📋 概要</Link></li>
-            <li><Link href="/last-year" className="text-base py-3">📸 昨年の様子</Link></li>
-            <li><Link href="/faq" className="text-base py-3">❓ FAQ</Link></li>
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="text-base py-3">
+                  {item.icon} {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <Link href="/" className="btn btn-ghost text-lg md:text-xl font-bold">
-          🏫 <span className="hidden xs:inline">ガッコウレイヴ</span>
+          🏫 <span className="hidden xs:inline">{EVENT_INFO.title.replace("2025", "")}</span>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-base">
-          <li><Link href="/about" className="px-4">概要</Link></li>
-          <li><Link href="/last-year" className="px-4">昨年の様子</Link></li>
-          <li><Link href="/faq" className="px-4">FAQ</Link></li>
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <Link href={item.href} className="px-4">{item.label}</Link>
+            </li>
+          ))}
         </ul>
       </div>
       <div className="navbar-end">
-        <a 
-          href="https://docs.google.com/forms/d/e/1FAIpQLSesYwQXXWNX90l2bt0NdJZjcf1kyhF4QQneQpIcjQR1gqWsYQ/viewform?usp=dialog"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn-primary btn-sm md:btn-md"
-        >
-          <span className="">参加登録</span>
-        </a>
+        <RegistrationButton size="sm" />
       </div>
     </header>
   );
