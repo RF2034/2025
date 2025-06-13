@@ -15,7 +15,7 @@ export default function RegistrationButton({ size = "md", className = "" }: Regi
       href={EVENT_INFO.registrationUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className={`btn btn-primary font-semibold transition-colors duration-300 hover:bg-primary/90 ${sizeClass} ${className}`}
+      className={`btn btn-primary shadow-lg font-semibold transition-colors duration-300 hover:bg-primary/90 ${sizeClass} ${className}`}
     >
       参加登録{size === "sm" ? "" : "はこちら"}
     </a>
