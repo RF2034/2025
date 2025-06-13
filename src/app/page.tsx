@@ -3,8 +3,11 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import RegistrationButton from "@/components/RegistrationButton";
 import { EVENT_INFO } from "@/constants/eventInfo";
+import { getParticipants } from "@/utils/parseParticipants";
 
-export default function Home() {
+export default async function Home() {
+  const participants = await getParticipants();
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -20,10 +23,6 @@ export default function Home() {
               <h2 className="mb-8 text-2xl md:text-3xl lg:text-4xl font-bold text-base-content">
                 廃校で、踊ろう
               </h2>
-
-              <div className="mb-8">
-                <EventInfo />
-              </div>
               
               <div className="mb-8 text-sm md:text-base leading-relaxed space-y-4 text-center">
                 <p>廃校になった小学校が、たった3日間だけ「自由な空間」に生まれ変わります――</p>
@@ -75,6 +74,37 @@ export default function Home() {
                 className="rounded-lg shadow-md max-w-full border-0"
               >
               </iframe>
+            </div>
+          </div>
+        </section>
+
+        {/* 現在の参加者セクション */}
+        <section className="py-12 md:py-16 lg:py-20 px-4 bg-base-200">
+          <div className="container mx-auto max-w-6xl">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8">
+              現在の参加者
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {participants.map((participant, index) => (
+                <div key={index} className="card bg-base-100 shadow-lg">
+                  <div className="card-body">
+                    <div className="flex items-center gap-4 mb-4">
+                      <h3 className="card-title text-lg">{participant.name}</h3>
+                    </div>
+                    <p className="text-sm text-base-content/80 leading-relaxed">
+                      {participant.comment}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="text-center mt-8">
+              <p className="text-base-content/70 mb-4">
+                あなたも一緒に参加しませんか？
+              </p>
+              <RegistrationButton size="md" />
             </div>
           </div>
         </section>
