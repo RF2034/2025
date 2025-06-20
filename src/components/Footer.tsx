@@ -9,7 +9,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="footer footer-center bg-base-200 text-base-content p-6 md:p-10">
+    <footer className="footer footer-center bg-neutral text-neutral-content p-6 md:p-10">
       <nav className="flex flex-wrap justify-center gap-3 md:gap-6 mb-4">
         {navItems.map((item) => (
           <Link key={item.href} href={item.href} className="link link-hover text-sm md:text-base">
@@ -31,7 +31,7 @@ export default function Footer() {
           </a>
         </div>
       </nav>
-      <aside className="text-xs md:text-sm text-base-content/70">
+      <aside className="text-xs md:text-sm text-neutral-content">
         <p>© {new Date().getFullYear()} ガッコウレイヴ実行委員会</p>
       </aside>
     </footer>
