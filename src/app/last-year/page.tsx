@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function LastYear() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-base-200">
       <Header />
       <main className="container mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold text-center mb-12">昨年の様子</h1>
@@ -35,7 +35,7 @@ export default function LastYear() {
             <h2 className="text-2xl font-bold mb-6">参加者の声</h2>
             <div className="space-y-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* 参加者の感想を掲載予定 */}
-              <div className="card bg-base-100 shadow-lg">
+              <div className="card bg-base-100">
                 <div className="card-body">
                   <div className="avatar avatar-placeholder">
                     <div className="bg-neutral text-neutral-content w-24 rounded-full">
@@ -55,7 +55,7 @@ export default function LastYear() {
                   </p>
                 </div>
               </div>
-              <div className="card bg-base-100 shadow-lg">
+              <div className="card bg-base-100">
                 <div className="card-body">
                   <div className="avatar avatar-placeholder">
                     <div className="bg-neutral text-neutral-content w-24 rounded-full">
@@ -75,7 +75,7 @@ export default function LastYear() {
                   </p>
                 </div>
               </div>
-              <div className="card bg-base-100 shadow-lg">
+              <div className="card bg-base-100">
                 <div className="card-body">
                   <div className="avatar avatar-placeholder">
                     <div className="bg-neutral text-neutral-content w-24 rounded-full">
