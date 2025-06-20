@@ -78,6 +78,8 @@ export default async function Home() {
           </div>
         </section>
 
+        <div className="divider"></div>
+
         {/* 現在の参加者セクション */}
         <section className="py-12 md:py-16 lg:py-20 px-4">
           <div className="container mx-auto max-w-6xl">

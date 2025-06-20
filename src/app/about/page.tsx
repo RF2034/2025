@@ -16,8 +16,8 @@ export default function About() {
       <main className="container mx-auto px-4 py-16 text-base-content">
         <h1 className="text-4xl font-bold text-center mb-12">イベント概要</h1>
         
-        <div className="grid gap-8 md:grid-cols-2">
-          <div className="card bg-base-100">
+        <div className="columns-1 md:columns-2 gap-8 space-y-8">
+          <div className="card bg-base-100 break-inside-avoid mb-8">
             <div className="card-body">
               <h2 className="card-title">開催情報</h2>
               <p>
@@ -29,73 +29,8 @@ export default function About() {
               <p>他 何書けばいいかアイデアください～～～！！！！</p>
             </div>
           </div>
-          
-          <div className="card bg-base-100">
-            <div className="card-body">
-              <h2 className="card-title">タイムテーブル</h2>
-              
-              <div className="space-y-4">
-                <div className="collapse collapse-arrow bg-base-100">
-                  <input type="radio" name="schedule-accordion" defaultChecked aria-label="1日目のスケジュール" />
-                  <div className="collapse-title text-lg font-medium">
-                    【1日目】金曜日 - Welcome to School
-                  </div>
-                  <div className="collapse-content">
-                    <div className="space-y-2 text-sm">
-                      <p><strong>15:00-16:00</strong> 受付・チェックイン</p>
-                      <p><strong>16:00-17:00</strong> オープニング・会場案内</p>
-                      <p><strong>17:00-19:00</strong> Welcome Party（体育館）</p>
-                      <p><strong>19:00-21:00</strong> 夕食・フリータイム</p>
-                      <p><strong>21:00-24:00</strong> Evening Session（各フロア）</p>
-                      <p><strong>24:00-03:00</strong> Midnight Groove</p>
-                      <p><strong>03:00-06:00</strong> After Hours（音楽室）</p>
-                    </div>
-                  </div>
-                </div>
 
-                <div className="collapse collapse-arrow bg-base-100">
-                  <input type="radio" name="schedule-accordion" aria-label="2日目のスケジュール" />
-                  <div className="collapse-title text-lg font-medium">
-                    【2日目】土曜日 - Full Experience
-                  </div>
-                  <div className="collapse-content">
-                    <div className="space-y-2 text-sm">
-                      <p><strong>09:00-11:00</strong> 朝食・モーニングアクティビティ</p>
-                      <p><strong>11:00-13:00</strong> ボードゲーム大会（図書室）</p>
-                      <p><strong>13:00-15:00</strong> 昼食・休憩</p>
-                      <p><strong>15:00-17:00</strong> 参加者DJタイム Vol.1</p>
-                      <p><strong>17:00-19:00</strong> OCTONE Brewing タイム</p>
-                      <p><strong>19:00-21:00</strong> 夕食・交流タイム</p>
-                      <p><strong>21:00-24:00</strong> Saturday Night Fever</p>
-                      <p><strong>24:00-03:00</strong> Deep Night</p>
-                      <p><strong>03:00-06:00</strong> Sunrise Session</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="collapse collapse-arrow bg-base-100">
-                  <input type="radio" name="schedule-accordion" aria-label="3日目のスケジュール" />
-                  <div className="collapse-title text-lg font-medium">
-                    【3日目】日曜日 - Farewell Celebration
-                  </div>
-                  <div className="collapse-content">
-                    <div className="space-y-2 text-sm">
-                      <p><strong>09:00-11:00</strong> 朝食・片付け</p>
-                      <p><strong>11:00-13:00</strong> サンデーマーケット</p>
-                      <p><strong>13:00-15:00</strong> 昼食・最後のフリータイム</p>
-                      <p><strong>15:00-17:00</strong> 参加者DJタイム Vol.2</p>
-                      <p><strong>17:00-19:00</strong> Closing Ceremony</p>
-                      <p><strong>19:00-20:00</strong> チェックアウト・送迎バス出発</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-4 text-xs text-base-content/70">
-                ※時間は予定です。詳細なタイムテーブルは参加者の方に後日配布いたします
-              </div>
-            </div>
-          </div>
-          <div className="card bg-base-100">
+          <div className="card bg-base-100 break-inside-avoid mb-8">
             <div className="card-body">
               <h2 className="card-title">参加方法</h2>
               <p>
@@ -106,7 +41,343 @@ export default function About() {
               </p>
             </div>
           </div>
+          
+          <div className="card bg-base-100 break-inside-avoid mb-8">
+            <div className="card-body">
+              <h2 className="card-title">昨年のタイムテーブル</h2>
+              
+              <div className="space-y-4">
+                <div className="collapse collapse-arrow bg-base-100">
+                  <input type="radio" name="schedule-accordion" defaultChecked aria-label="1日目のスケジュール" />
+                  <div className="collapse-title text-lg font-medium">
+                    【1日目】
+                  </div>
+                  <div className="collapse-content">
+                    <ul className="timeline timeline-vertical timeline-compact">
+                      <li>
+                        <div className="timeline-start">
+                          08:00
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          チャーターバス出発 @新宿駅前
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          11:30
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          休憩兼昼食タイム @赤城高原SA
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          15:00
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          さる小到着、機材設営、順次音出し
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          18:00
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          施設の全体案内&注意事項説明
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          19:00
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          夕食タイム
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          21:00
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          全ブースDJスタート
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          日を囲む会 @BBQスペース
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          A面打破（APOP） @音楽室
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          22:00
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          キャンドルナイト（chill） @図書室
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          24:00
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          夜食タイム
+                        </div>
+                        <hr />
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="collapse collapse-arrow bg-base-100">
+                  <input type="radio" name="schedule-accordion" aria-label="2日目のスケジュール" />
+                  <div className="collapse-title text-lg font-medium">
+                    【2日目】
+                  </div>
+                  <div className="collapse-content">
+                    <ul className="timeline timeline-vertical timeline-compact">
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          07:00
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          Sound of Sunrise（House, Techno etc） @音楽室
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          09:00
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          ボドゲ会 @多目的室
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          10:30
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          ブランチタイム
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          12:00
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          パラグライダー体験（希望者のみ） @さる小近隣
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          12:30
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          デジゲー会 @多目的室
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          15:00
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          Coffee & Music（downtempo） @図工室
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          15:30
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          Purpose ep.EX（DnB） @音楽室
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          16:00
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          ドッチビー @校庭
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          18:30
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          夕食タイム
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          20:00
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          🔥キャンプファイヤー🔥 @校庭
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          22:00
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          キャンドルタイム（chill） @図書室
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          25:30
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          夜食タイム
+                        </div>
+                        <hr />
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="collapse collapse-arrow bg-base-100">
+                  <input type="radio" name="schedule-accordion" aria-label="3日目のスケジュール" />
+                  <div className="collapse-title text-lg font-medium">
+                    【3日目】
+                  </div>
+                  <div className="collapse-content">
+                    <ul className="timeline timeline-vertical timeline-compact">
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          08:30
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          Totsuzen Game（Game Music） @音楽室
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          10:30
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          ブランチタイム
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          13:00
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          撤収作業
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          14:00
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          資材確認
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          精算、集金
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          16:00
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          さる小出発
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          17:30
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          休憩 @上里ＳＡ
+                        </div>
+                        <hr />
+                      </li>
+                      <li>
+                        <hr />
+                        <div className="timeline-start">
+                          20:00
+                        </div>
+                        <div className="timeline-end timeline-box ml-4 text-sm">
+                          新宿駅到着・解散
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                
+              <div className="mt-4 text-xs text-base-content/70">
+                ※タイムテーブルは昨年のものです。今年度のものは、参加者の皆さんと相談して決めていきます！
+              </div>
+              </div>
+            </div>
+          </div>
+
         </div>
+
       </main>
       <Footer />
     </div>
