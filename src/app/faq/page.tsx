@@ -15,7 +15,7 @@ export default function FAQ() {
         <h1 className="text-4xl font-bold text-center mb-12">よくある質問</h1>
         
           <div className="collapse collapse-arrow bg-base-100 mb-4">
-            <input type="radio" name="faq-accordion" aria-label="東京からの送迎バスはどこから出発しますか？" />
+            <input type="checkbox" name="faq-accordion-1" aria-label="東京からの送迎バスはどこから出発しますか？" />
             <div className="collapse-title text-xl font-medium">
               東京からの送迎バスはどこから出発しますか？
             </div>
@@ -25,7 +25,7 @@ export default function FAQ() {
           </div>
 
           <div className="collapse collapse-arrow bg-base-100 mb-4">
-            <input type="radio" name="faq-accordion" aria-label="宿泊施設はどのような感じですか？" />
+            <input type="checkbox" name="faq-accordion-2" aria-label="宿泊施設はどのような感じですか？" />
             <div className="collapse-title text-xl font-medium">
               宿泊施設はどのような感じですか？
             </div>
@@ -35,7 +35,7 @@ export default function FAQ() {
           </div>
 
           <div className="collapse collapse-arrow bg-base-100 mb-4">
-            <input type="radio" name="faq-accordion" aria-label="食事は提供されますか？" />
+            <input type="checkbox" name="faq-accordion-3" aria-label="食事は提供されますか？" />
             <div className="collapse-title text-xl font-medium">
               食事は提供されますか？
             </div>
@@ -45,7 +45,7 @@ export default function FAQ() {
           </div>
 
           <div className="collapse collapse-arrow bg-base-100 mb-4">
-            <input type="radio" name="faq-accordion" aria-label="初心者でも楽しめますか？" />
+            <input type="checkbox" name="faq-accordion-4" aria-label="初心者でも楽しめますか？" />
             <div className="collapse-title text-xl font-medium">
               初心者でも楽しめますか？
             </div>
@@ -55,7 +55,7 @@ export default function FAQ() {
           </div>
 
           <div className="collapse collapse-arrow bg-base-100 mb-4">
-            <input type="radio" name="faq-accordion" aria-label="DJとして参加することはできますか？" />
+            <input type="checkbox" name="faq-accordion-5" aria-label="DJとして参加することはできますか？" />
             <div className="collapse-title text-xl font-medium">
               DJとして参加することはできますか？
             </div>
@@ -65,7 +65,7 @@ export default function FAQ() {
           </div>
 
           <div className="collapse collapse-arrow bg-base-100 mb-4">
-            <input type="radio" name="faq-accordion" aria-label="お酒は飲めますか？" />
+            <input type="checkbox" name="faq-accordion-6" aria-label="お酒は飲めますか？" />
             <div className="collapse-title text-xl font-medium">
               お酒は飲めますか？
             </div>
@@ -75,7 +75,7 @@ export default function FAQ() {
           </div>
 
           <div className="collapse collapse-arrow bg-base-100 mb-4">
-            <input type="radio" name="faq-accordion" aria-label="雨天時はどうなりますか？" />
+            <input type="checkbox" name="faq-accordion-7" aria-label="雨天時はどうなりますか？" />
             <div className="collapse-title text-xl font-medium">
               雨天時はどうなりますか？
             </div>
@@ -85,7 +85,7 @@ export default function FAQ() {
           </div>
 
           <div className="collapse collapse-arrow bg-base-100 mb-4">
-            <input type="radio" name="faq-accordion" aria-label="キャンセル料はかかりますか？" />
+            <input type="checkbox" name="faq-accordion-8" aria-label="キャンセル料はかかりますか？" />
             <div className="collapse-title text-xl font-medium">
               キャンセル料はかかりますか？
             </div>
@@ -95,7 +95,7 @@ export default function FAQ() {
           </div>
 
           <div className="collapse collapse-arrow bg-base-100 mb-4">
-            <input type="radio" name="faq-accordion" aria-label="持参すべきものはありますか？" />
+            <input type="checkbox" name="faq-accordion-9" aria-label="持参すべきものはありますか？" />
             <div className="collapse-title text-xl font-medium">
               持参すべきものはありますか？
             </div>
@@ -105,7 +105,7 @@ export default function FAQ() {
           </div>
 
           <div className="collapse collapse-arrow bg-base-100 mb-4">
-            <input type="radio" name="faq-accordion" aria-label="一人での参加でも大丈夫ですか？" />
+            <input type="checkbox" name="faq-accordion-10" aria-label="一人での参加でも大丈夫ですか？" />
             <div className="collapse-title text-xl font-medium">
               一人での参加でも大丈夫ですか？
             </div>
