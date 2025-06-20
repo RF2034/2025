@@ -9,7 +9,7 @@ export default async function Home() {
   const participants = await getParticipants();
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-base-200 text-base-content">
       <Header />
       <main>
         {/* ヒーローセクション */}
@@ -47,7 +47,7 @@ export default async function Home() {
               </div>
               
               <div className="flex justify-center">
-                <RegistrationButton size="lg" />
+                <RegistrationButton size="xl" />
               </div>
             </div>
           </div>
@@ -71,7 +71,7 @@ export default async function Home() {
                 title="泊まれる学校 さる小の地図"
                 allowFullScreen={true} 
                 referrerPolicy="no-referrer-when-downgrade"
-                className="rounded-lg shadow-md max-w-full border-0"
+                className="rounded-lg max-w-full border-0"
               >
               </iframe>
             </div>
@@ -79,7 +79,7 @@ export default async function Home() {
         </section>
 
         {/* 現在の参加者セクション */}
-        <section className="py-12 md:py-16 lg:py-20 px-4 bg-base-200">
+        <section className="py-12 md:py-16 lg:py-20 px-4">
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8">
               現在の参加者
@@ -87,7 +87,7 @@ export default async function Home() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {participants.map((participant, index) => (
-                <div key={index} className="card bg-base-100 shadow-lg">
+                <div key={index} className="card bg-base-100 relative overflow-hidden">
                   <div className="card-body">
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="card-title text-lg">{participant.name}</h3>

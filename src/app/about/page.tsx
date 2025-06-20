@@ -11,13 +11,13 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-base-200">
       <Header />
       <main className="container mx-auto px-4 py-16 text-base-content">
         <h1 className="text-4xl font-bold text-center mb-12">イベント概要</h1>
         
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-base-100">
             <div className="card-body">
               <h2 className="card-title">開催情報</h2>
               <p>
@@ -30,12 +30,12 @@ export default function About() {
             </div>
           </div>
           
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-base-100">
             <div className="card-body">
               <h2 className="card-title">タイムテーブル</h2>
               
               <div className="space-y-4">
-                <div className="collapse collapse-arrow bg-base-200">
+                <div className="collapse collapse-arrow bg-base-100">
                   <input type="radio" name="schedule-accordion" defaultChecked aria-label="1日目のスケジュール" />
                   <div className="collapse-title text-lg font-medium">
                     【1日目】金曜日 - Welcome to School
@@ -53,7 +53,7 @@ export default function About() {
                   </div>
                 </div>
 
-                <div className="collapse collapse-arrow bg-base-200">
+                <div className="collapse collapse-arrow bg-base-100">
                   <input type="radio" name="schedule-accordion" aria-label="2日目のスケジュール" />
                   <div className="collapse-title text-lg font-medium">
                     【2日目】土曜日 - Full Experience
@@ -73,7 +73,7 @@ export default function About() {
                   </div>
                 </div>
 
-                <div className="collapse collapse-arrow bg-base-200">
+                <div className="collapse collapse-arrow bg-base-100">
                   <input type="radio" name="schedule-accordion" aria-label="3日目のスケジュール" />
                   <div className="collapse-title text-lg font-medium">
                     【3日目】日曜日 - Farewell Celebration
@@ -95,7 +95,7 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="card bg-base-100 shadow-xl">
+          <div className="card bg-base-100">
             <div className="card-body">
               <h2 className="card-title">参加方法</h2>
               <p>

@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 
 export default function FAQ() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-base-200">
       <Header />
       <main className="container mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold text-center mb-12">よくある質問</h1>
         
-        <div className="collapse collapse-arrow bg-base-200 mb-4">
+          <div className="collapse collapse-arrow bg-base-100 mb-4">
             <input type="radio" name="faq-accordion" aria-label="東京からの送迎バスはどこから出発しますか？" />
             <div className="collapse-title text-xl font-medium">
               東京からの送迎バスはどこから出発しますか？
@@ -24,7 +24,7 @@ export default function FAQ() {
             </div>
           </div>
 
-          <div className="collapse collapse-arrow bg-base-200 mb-4">
+          <div className="collapse collapse-arrow bg-base-100 mb-4">
             <input type="radio" name="faq-accordion" aria-label="宿泊施設はどのような感じですか？" />
             <div className="collapse-title text-xl font-medium">
               宿泊施設はどのような感じですか？
@@ -34,7 +34,7 @@ export default function FAQ() {
             </div>
           </div>
 
-          <div className="collapse collapse-arrow bg-base-200 mb-4">
+          <div className="collapse collapse-arrow bg-base-100 mb-4">
             <input type="radio" name="faq-accordion" aria-label="食事は提供されますか？" />
             <div className="collapse-title text-xl font-medium">
               食事は提供されますか？
@@ -44,7 +44,7 @@ export default function FAQ() {
             </div>
           </div>
 
-          <div className="collapse collapse-arrow bg-base-200 mb-4">
+          <div className="collapse collapse-arrow bg-base-100 mb-4">
             <input type="radio" name="faq-accordion" aria-label="初心者でも楽しめますか？" />
             <div className="collapse-title text-xl font-medium">
               初心者でも楽しめますか？
@@ -54,7 +54,7 @@ export default function FAQ() {
             </div>
           </div>
 
-          <div className="collapse collapse-arrow bg-base-200 mb-4">
+          <div className="collapse collapse-arrow bg-base-100 mb-4">
             <input type="radio" name="faq-accordion" aria-label="DJとして参加することはできますか？" />
             <div className="collapse-title text-xl font-medium">
               DJとして参加することはできますか？
@@ -64,7 +64,7 @@ export default function FAQ() {
             </div>
           </div>
 
-          <div className="collapse collapse-arrow bg-base-200 mb-4">
+          <div className="collapse collapse-arrow bg-base-100 mb-4">
             <input type="radio" name="faq-accordion" aria-label="お酒は飲めますか？" />
             <div className="collapse-title text-xl font-medium">
               お酒は飲めますか？
@@ -74,7 +74,7 @@ export default function FAQ() {
             </div>
           </div>
 
-          <div className="collapse collapse-arrow bg-base-200 mb-4">
+          <div className="collapse collapse-arrow bg-base-100 mb-4">
             <input type="radio" name="faq-accordion" aria-label="雨天時はどうなりますか？" />
             <div className="collapse-title text-xl font-medium">
               雨天時はどうなりますか？
@@ -84,7 +84,7 @@ export default function FAQ() {
             </div>
           </div>
 
-          <div className="collapse collapse-arrow bg-base-200 mb-4">
+          <div className="collapse collapse-arrow bg-base-100 mb-4">
             <input type="radio" name="faq-accordion" aria-label="キャンセル料はかかりますか？" />
             <div className="collapse-title text-xl font-medium">
               キャンセル料はかかりますか？
@@ -94,7 +94,7 @@ export default function FAQ() {
             </div>
           </div>
 
-          <div className="collapse collapse-arrow bg-base-200 mb-4">
+          <div className="collapse collapse-arrow bg-base-100 mb-4">
             <input type="radio" name="faq-accordion" aria-label="持参すべきものはありますか？" />
             <div className="collapse-title text-xl font-medium">
               持参すべきものはありますか？
@@ -104,7 +104,7 @@ export default function FAQ() {
             </div>
           </div>
 
-          <div className="collapse collapse-arrow bg-base-200 mb-4">
+          <div className="collapse collapse-arrow bg-base-100 mb-4">
             <input type="radio" name="faq-accordion" aria-label="一人での参加でも大丈夫ですか？" />
             <div className="collapse-title text-xl font-medium">
               一人での参加でも大丈夫ですか？
