@@ -42,7 +42,7 @@ export default function Header() {
             ))}
           </ul>
         </div>
-        <Link href="/" className="btn btn-ghost text-lg md:text-xl font-bold">
+        <Link href="/" className="btn btn-outline btn-primary text-lg md:text-xl font-bold">
           🏫 <span className="hidden xs:inline">{EVENT_INFO.title.replace("2025", "")}</span>
         </Link>
       </div>
