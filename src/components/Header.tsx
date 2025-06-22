@@ -1,9 +1,9 @@
-import { EVENT_INFO } from "@/constants/eventInfo";
 import Link from "next/link";
 import RegistrationButton from "./RegistrationButton";
 
 export default function Header() {
   const navItems = [
+    { href: "/", label: "ホーム", icon: "🏠" },
     { href: "/about", label: "概要", icon: "📋" },
     { href: "/last-year", label: "昨年の様子", icon: "📸" },
     { href: "/faq", label: "FAQ", icon: "❓" }
@@ -42,9 +42,6 @@ export default function Header() {
             ))}
           </ul>
         </div>
-        <Link href="/" className="btn btn-outline btn-primary text-lg md:text-xl font-bold">
-          🏫 <span className="hidden xs:inline">{EVENT_INFO.title.replace("2025", "")}</span>
-        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-base">
