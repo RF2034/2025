@@ -48,8 +48,8 @@ export default function About() {
               
               <div className="space-y-4">
                 <div className="collapse collapse-arrow bg-base-100">
-                  <input type="radio" name="schedule-accordion" defaultChecked aria-label="1日目のスケジュール" />
-                  <div className="collapse-title text-lg font-medium">
+                  <input type="checkbox" aria-label="1日目のスケジュール" />
+                  <div className="collapse-title text-lg font-bold">
                     【1日目】
                   </div>
                   <div className="collapse-content">
@@ -152,8 +152,8 @@ export default function About() {
                 </div>
 
                 <div className="collapse collapse-arrow bg-base-100">
-                  <input type="radio" name="schedule-accordion" aria-label="2日目のスケジュール" />
-                  <div className="collapse-title text-lg font-medium">
+                  <input type="checkbox" aria-label="2日目のスケジュール" />
+                  <div className="collapse-title text-lg font-bold">
                     【2日目】
                   </div>
                   <div className="collapse-content">
@@ -283,8 +283,8 @@ export default function About() {
                 </div>
 
                 <div className="collapse collapse-arrow bg-base-100">
-                  <input type="radio" name="schedule-accordion" aria-label="3日目のスケジュール" />
-                  <div className="collapse-title text-lg font-medium">
+                  <input type="checkbox" aria-label="3日目のスケジュール" />
+                  <div className="collapse-title text-lg font-bold">
                     【3日目】
                   </div>
                   <div className="collapse-content">
