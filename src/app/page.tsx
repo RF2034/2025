@@ -4,11 +4,8 @@ import Header from "@/components/Header";
 import ParticipantsSection from "@/components/ParticipantsSection";
 import RegistrationButton from "@/components/RegistrationButton";
 import { EVENT_INFO } from "@/constants/eventInfo";
-import { getParticipants } from "@/utils/parseParticipants";
 
 export default async function Home() {
-  const participants = await getParticipants();
-
   return (
     <div className="min-h-screen bg-base-200 text-base-content">
       <Header />
@@ -82,7 +79,7 @@ export default async function Home() {
         <div className="divider"></div>
 
         {/* 現在の参加者セクション */}
-        <ParticipantsSection participants={participants} />
+        <ParticipantsSection />
       </main>
       <Footer />
     </div>
