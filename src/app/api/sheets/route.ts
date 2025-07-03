@@ -1,4 +1,3 @@
-import { google } from 'googleapis';
 import { NextResponse } from 'next/server';
 export const runtime = 'edge';
 
@@ -7,6 +6,70 @@ export interface SheetData {
   comment: string
   socialUrl?: string
   iconUrl?: string
+}
+
+// JWT生成用のヘルパー関数
+async function createJWT(privateKey: string, serviceAccountEmail: string) {
+  const now = Math.floor(Date.now() / 1000);
+  const payload = {
+    iss: serviceAccountEmail,
+    scope: 'https://www.googleapis.com/auth/spreadsheets.readonly',
+    aud: 'https://oauth2.googleapis.com/token',
+    exp: now + 3600,
+    iat: now,
+  };
+
+  const header = {
+    alg: 'RS256',
+    typ: 'JWT',
+  };
+
+  const encodedHeader = btoa(JSON.stringify(header));
+  const encodedPayload = btoa(JSON.stringify(payload));
+  const unsignedToken = `${encodedHeader}.${encodedPayload}`;
+
+  // Edge Runtimeでは crypto.subtle を使用
+  const keyData = privateKey.replace(/\\n/g, '\n').replace(/-----BEGIN PRIVATE KEY-----/, '').replace(/-----END PRIVATE KEY-----/, '').replace(/\s/g, '');
+  const binaryKey = Uint8Array.from(atob(keyData), c => c.charCodeAt(0));
+  
+  const cryptoKey = await crypto.subtle.importKey(
+    'pkcs8',
+    binaryKey,
+    {
+      name: 'RSASSA-PKCS1-v1_5',
+      hash: 'SHA-256',
+    },
+    false,
+    ['sign']
+  );
+
+  const signature = await crypto.subtle.sign(
+    'RSASSA-PKCS1-v1_5',
+    cryptoKey,
+    new TextEncoder().encode(unsignedToken)
+  );
+
+  const encodedSignature = btoa(String.fromCharCode(...new Uint8Array(signature)));
+  return `${unsignedToken}.${encodedSignature}`;
+}
+
+// アクセストークン取得
+async function getAccessToken(privateKey: string, serviceAccountEmail: string) {
+  const jwt = await createJWT(privateKey, serviceAccountEmail);
+  
+  const response = await fetch('https://oauth2.googleapis.com/token', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams({
+      grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+      assertion: jwt,
+    }),
+  });
+
+  const data = await response.json();
+  return data.access_token;
 }
 
 export async function GET() {
@@ -21,24 +84,24 @@ export async function GET() {
       return NextResponse.json({ error: 'Server configuration error' }, { status: 500 })
     }
 
-    // Google Sheets API認証
-    const auth = new google.auth.GoogleAuth({
-      credentials: {
-        client_email: serviceAccountEmail,
-        private_key: privateKey.replace(/\\n/g, '\n'), // 改行文字を正しく処理
+    // アクセストークン取得
+    const accessToken = await getAccessToken(privateKey, serviceAccountEmail);
+
+    // Google Sheets APIを直接呼び出し
+    const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/default!C:F`;
+    const response = await fetch(apiUrl, {
+      headers: {
+        'Authorization': `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
       },
-      scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
-    })
+    });
 
-    const sheets = google.sheets({ version: 'v4', auth })
+    if (!response.ok) {
+      throw new Error(`API request failed: ${response.status}`);
+    }
 
-    // スプレッドシートからデータを取得
-    const response = await sheets.spreadsheets.values.get({
-      spreadsheetId: spreadsheetId,
-      range: 'default!C:F', // シート名とカラム範囲を指定（4列目まで取得）
-    })
-
-    const rows = response.data.values
+    const data = await response.json();
+    const rows = data.values;
 
     if (!rows || rows.length === 0) {
       return NextResponse.json([])
@@ -48,8 +111,8 @@ export async function GET() {
     const [, ...dataRows] = rows
     
     const formattedData: SheetData[] = dataRows
-      .filter(row => row.length >= 3) // 3列すべてにデータがある行のみ
-      .map(row => ({
+      .filter((row: string[]) => row.length >= 3) // 3列すべてにデータがある行のみ
+      .map((row: string[]) => ({
         name: row[0] || '',
         comment: row[2] || '',
         socialUrl: row[1] || undefined,
