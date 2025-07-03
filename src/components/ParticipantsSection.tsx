@@ -14,11 +14,32 @@ interface ParticipantsSectionProps {
   participants?: Participant[];
 }
 
+// 料金階層の定義
+const PRICE_TIERS = [
+  { minParticipants: 0, price: 8000, nextTier: 30 },
+  { minParticipants: 30, price: 6000, nextTier: 40 },
+  { minParticipants: 40, price: 4000, nextTier: 50 },
+  { minParticipants: 50, price: 2000, nextTier: null }
+];
+
 export default function ParticipantsSection({ participants = [] }: ParticipantsSectionProps) {
   const { data, loading, error } = useSheetsData(5); // 5分間隔で更新
   
   // APIから取得したデータを優先し、フォールバックとしてpropsを使用
   const displayParticipants = data.length > 0 ? data : participants;
+  const currentParticipants = displayParticipants.length;
+
+  // 現在の料金階層を取得
+  const getCurrentTier = (count: number) => {
+    return PRICE_TIERS.find(tier => count >= tier.minParticipants && 
+      (tier.nextTier === null || count < tier.nextTier)) || PRICE_TIERS[0];
+  };
+
+  const currentTier = getCurrentTier(currentParticipants);
+  const progress = currentTier.nextTier 
+    ? ((currentParticipants - currentTier.minParticipants) / (currentTier.nextTier - currentTier.minParticipants)) * 100 
+    : 100;
+  const remainingToNextTier = currentTier.nextTier ? currentTier.nextTier - currentParticipants : 0;
 
   // URLからSNSプラットフォームを判定する関数
   const getSocialPlatform = (url: string): 'twitter' | 'instagram' | 'unknown' => {
@@ -75,6 +96,85 @@ export default function ParticipantsSection({ participants = [] }: ParticipantsS
   return (
     <section className="py-12 md:py-16 lg:py-20 px-4">
       <div className="container mx-auto max-w-6xl">
+        {/* 料金ゲージセクション */}
+        <div className="mb-12">
+          <div className="card bg-gradient-to-r from-primary/10 to-secondary/10 shadow-sm">
+            <div className="card-body">
+              <h2 className="text-xl md:text-2xl font-bold text-center mb-6">
+                参加料金
+              </h2>
+              
+              <div className="flex flex-col items-center space-y-4">
+                {/* 現在の料金表示 */}
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-primary-content">
+                    ¥{currentTier.price.toLocaleString()}
+                  </div>
+                  <div className="text-sm text-base-content/80">
+                    現在の参加料金（{currentParticipants}人）
+                  </div>
+                </div>
+
+                {/* プログレスバー */}
+                <div className="w-full max-w-md">
+                  <div className="flex justify-between text-xs text-base-content/80 mb-2">
+                    <span>{currentTier.minParticipants}人</span>
+                    {currentTier.nextTier && <span>{currentTier.nextTier}人</span>}
+                  </div>
+                  <div className="relative">
+                    <progress 
+                      className="progress progress-primary w-full h-3" 
+                      value={progress} 
+                      max="100"
+                    />
+                    <div 
+                      className="absolute top-0 left-0 h-3 bg-primary rounded-full transition-all duration-300 ease-out"
+                      style={{ width: `${progress}%` }}
+                    />
+                  </div>
+                  <div className="text-center mt-2">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/20 text-primary-content">
+                      {currentParticipants}人参加中
+                    </span>
+                  </div>
+                </div>
+
+                {/* 次の階層への案内 */}
+                {currentTier.nextTier && (
+                  <div className="text-center p-4 bg-base-200 rounded-lg">
+                    <div className="text-sm text-base-content/80 mb-1">
+                      あと{remainingToNextTier}人で
+                    </div>
+                    <div className="text-lg font-bold text-accent-content">
+                      ¥{PRICE_TIERS.find(t => t.minParticipants === currentTier.nextTier)?.price.toLocaleString()}に値下げ！
+                    </div>
+                  </div>
+                )}
+
+                {/* 料金階層表示 */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 w-full max-w-lg text-xs">
+                  {PRICE_TIERS.map((tier, index) => (
+                    <div 
+                      key={index}
+                      className={`p-2 rounded text-center transition-all duration-200 ${
+                        currentParticipants >= tier.minParticipants && 
+                        (tier.nextTier === null || currentParticipants < tier.nextTier)
+                          ? 'bg-primary text-primary-content shadow-xs' 
+                          : 'bg-base-200 text-base-content/80'
+                      }`}
+                    >
+                      <div className="font-bold">
+                        {tier.minParticipants}人{tier.nextTier ? `〜` : '+'}
+                      </div>
+                      <div>¥{tier.price.toLocaleString()}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8">
           現在の参加者
         </h2>
@@ -82,17 +182,17 @@ export default function ParticipantsSection({ participants = [] }: ParticipantsS
         {loading && displayParticipants.length === 0 ? (
           <div className="text-center">
             <span className="loading loading-spinner loading-md"></span>
-            <p className="text-base-content/70 mt-2">参加者データを読み込み中...</p>
+            <p className="text-base-content/80 mt-2">参加者データを読み込み中...</p>
           </div>
         ) : error ? (
           <div className="text-center">
             <p className="text-error mb-4">データの取得に失敗しました</p>
-            <p className="text-base-content/70 text-sm">{error}</p>
+            <p className="text-base-content/80 text-sm">{error}</p>
           </div>
         ) : displayParticipants.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {displayParticipants.map((participant, index) => (
-              <div key={index} className="card bg-base-100 relative overflow-hidden">
+              <div key={index} className="card bg-base-100 relative overflow-hidden shadow-xs">
                 <div className="card-body">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
@@ -136,14 +236,14 @@ export default function ParticipantsSection({ participants = [] }: ParticipantsS
           </div>
         ) : (
           <div className="text-center">
-            <p className="text-base-content/70 mb-4">
+            <p className="text-base-content/80 mb-4">
               参加者が登録されると、こちらに表示されます
             </p>
           </div>
         )}
         
         <div className="text-center mt-8">
-          <p className="text-base-content/70 mb-4">
+          <p className="text-base-content/80 mb-4">
             あなたも一緒に参加しませんか？
           </p>
           <RegistrationButton size="md" />
