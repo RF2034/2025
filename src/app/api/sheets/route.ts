@@ -1,5 +1,6 @@
-import { google } from 'googleapis'
-import { NextResponse } from 'next/server'
+import { google } from 'googleapis';
+import { NextResponse } from 'next/server';
+export const runtime = 'edge';
 
 export interface SheetData {
   name: string
