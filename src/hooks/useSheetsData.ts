@@ -6,7 +6,8 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 export interface SheetData {
   name: string
   comment: string
-  twitterUrl?: string
+  socialUrl?: string
+  iconUrl?: string
 }
 
 interface UseSheetsDataReturn {

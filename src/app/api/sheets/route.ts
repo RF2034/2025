@@ -4,7 +4,8 @@ import { NextResponse } from 'next/server'
 export interface SheetData {
   name: string
   comment: string
-  twitterUrl?: string
+  socialUrl?: string
+  iconUrl?: string
 }
 
 export async function GET() {
@@ -33,7 +34,7 @@ export async function GET() {
     // スプレッドシートからデータを取得
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: spreadsheetId,
-      range: 'default!C:E', // シート名とカラム範囲を指定
+      range: 'default!C:F', // シート名とカラム範囲を指定（4列目まで取得）
     })
 
     const rows = response.data.values
@@ -50,7 +51,8 @@ export async function GET() {
       .map(row => ({
         name: row[0] || '',
         comment: row[2] || '',
-        twitterUrl: row[1] || undefined
+        socialUrl: row[1] || undefined,
+        iconUrl: row[3] || undefined
       }))
 
     // 1分間キャッシュ（バースト対応）
