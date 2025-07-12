@@ -98,7 +98,7 @@ export default function ParticipantsSection({ participants = [] }: ParticipantsS
       <div className="container mx-auto max-w-6xl">
         {/* 料金ゲージセクション */}
         <div className="mb-12">
-          <div className="card bg-gradient-to-r from-primary/10 to-secondary/10 shadow-sm">
+          <div className="card bg-gradient-to-r from-primary/10 to-secondary/10">
             <div className="card-body">
               <h2 className="text-xl md:text-2xl font-bold text-center mb-6">
                 参加料金

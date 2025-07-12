@@ -60,7 +60,7 @@ export default async function Home() {
                 <p>
                   自由に、思い思いに楽しんでください。
                 </p>
-                <div className="bg-accent/10 p-6 rounded-lg">
+                <div className="bg-base-200 p-6 rounded-lg">
                   <p className="text-lg md:text-xl font-semibold text-center">
                     この場所でしか味わえない<br />
                     「あなただけの楽しみ方」を見つけましょう
