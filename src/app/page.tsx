@@ -4,10 +4,11 @@ import Header from "@/components/Header";
 import ParticipantsSection from "@/components/ParticipantsSection";
 import RegistrationButton from "@/components/RegistrationButton";
 import { EVENT_INFO } from "@/constants/eventInfo";
+import Link from "next/link";
 
 export default async function Home() {
   return (
-    <div className="min-h-screen bg-base-200 text-base-content">
+    <div className="min-h-screen bg-base-200 text-base-content pt-16">
       <Header />
       <main>
         {/* ヒーローセクション */}
@@ -31,7 +32,7 @@ export default async function Home() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <RegistrationButton size="xl" />
-                <button className="btn btn-outline btn-lg">詳細を見る</button>
+                <Link href="/about" className="btn btn-outline btn-lg">詳細を見る</Link>
               </div>
             </div>
           </div>

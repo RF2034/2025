@@ -10,7 +10,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="navbar bg-base-200 px-2 md:px-4">
+    <header className="navbar bg-base-200 px-2 md:px-4 fixed top-0 left-0 right-0 z-50 shadow-xs">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-square lg:hidden">
@@ -31,7 +31,7 @@ export default function Header() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-60 p-2 border"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[60] mt-3 w-60 p-2 border"
           >
             {navItems.map((item) => (
               <li key={item.href}>

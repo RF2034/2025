@@ -11,13 +11,13 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-base-200">
+    <div className="min-h-screen bg-base-200 pt-16">
       <Header />
       <main className="container mx-auto px-4 py-16 text-base-content">
         <h1 className="text-4xl font-bold text-center mb-12">イベント概要</h1>
         
-        <div className="columns-1 md:columns-2 gap-8 space-y-8">
-          <div className="card bg-base-100 break-inside-avoid mb-8">
+        <div className="space-y-8">
+          <div className="card bg-base-100 mb-8">
             <div className="card-body">
               <h2 className="card-title">開催情報</h2>
               <p>
@@ -30,7 +30,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="card bg-base-100 break-inside-avoid mb-8">
+          <div className="card bg-base-100 mb-8">
             <div className="card-body">
               <h2 className="card-title">参加方法</h2>
               <p>
@@ -42,18 +42,16 @@ export default function About() {
             </div>
           </div>
           
-          <div className="card bg-base-100 break-inside-avoid mb-8">
+          <div className="card bg-base-100 mb-8">
             <div className="card-body">
               <h2 className="card-title">昨年のタイムテーブル</h2>
               
-              <div className="space-y-4">
-                <div className="collapse collapse-arrow bg-base-100">
-                  <input type="checkbox" aria-label="1日目のスケジュール" />
-                  <div className="collapse-title text-lg font-bold">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <div className="bg-base-200 rounded-lg p-4">
+                  <div className="text-lg font-bold mb-4">
                     【1日目】
                   </div>
-                  <div className="collapse-content">
-                    <ul className="timeline timeline-vertical timeline-compact">
+                  <ul className="timeline timeline-vertical timeline-compact">
                       <li>
                         <div className="timeline-start">
                           08:00
@@ -148,16 +146,13 @@ export default function About() {
                         <hr />
                       </li>
                     </ul>
-                  </div>
                 </div>
 
-                <div className="collapse collapse-arrow bg-base-100">
-                  <input type="checkbox" aria-label="2日目のスケジュール" />
-                  <div className="collapse-title text-lg font-bold">
+                <div className="bg-base-200 rounded-lg p-4">
+                  <div className="text-lg font-bold mb-4">
                     【2日目】
                   </div>
-                  <div className="collapse-content">
-                    <ul className="timeline timeline-vertical timeline-compact">
+                  <ul className="timeline timeline-vertical timeline-compact">
                       <li>
                         <hr />
                         <div className="timeline-start">
@@ -279,16 +274,13 @@ export default function About() {
                         <hr />
                       </li>
                     </ul>
-                  </div>
                 </div>
 
-                <div className="collapse collapse-arrow bg-base-100">
-                  <input type="checkbox" aria-label="3日目のスケジュール" />
-                  <div className="collapse-title text-lg font-bold">
+                <div className="bg-base-200 rounded-lg p-4">
+                  <div className="text-lg font-bold mb-4">
                     【3日目】
                   </div>
-                  <div className="collapse-content">
-                    <ul className="timeline timeline-vertical timeline-compact">
+                  <ul className="timeline timeline-vertical timeline-compact">
                       <li>
                         <hr />
                         <div className="timeline-start">
@@ -366,7 +358,6 @@ export default function About() {
                         </div>
                       </li>
                     </ul>
-                  </div>
                 </div>
                 
               <div className="mt-4 text-xs text-base-content/70">
