@@ -16,10 +16,10 @@ interface ParticipantsSectionProps {
 
 // 料金階層の定義
 const PRICE_TIERS = [
-  { minParticipants: 0, price: 8000, nextTier: 30 },
-  { minParticipants: 30, price: 6000, nextTier: 40 },
-  { minParticipants: 40, price: 4000, nextTier: 50 },
-  { minParticipants: 50, price: 2000, nextTier: null }
+  { minParticipants: 0, price: 55000, nextTier: 35 },
+  { minParticipants: 35, price: 50000, nextTier: 40 },
+  { minParticipants: 40, price: 45000, nextTier: 45 },
+  { minParticipants: 45, price: 40000, nextTier: 50 }
 ];
 
 export default function ParticipantsSection({ participants = [] }: ParticipantsSectionProps) {
