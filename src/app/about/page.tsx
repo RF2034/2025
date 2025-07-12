@@ -1,6 +1,6 @@
+import EventInfo from "@/components/EventInfo";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import VenueLink from "@/components/VenueLink";
 import { EVENT_INFO } from "@/constants/eventInfo";
 import type { Metadata } from "next";
 
@@ -20,13 +20,7 @@ export default function About() {
           <div className="card bg-base-100 mb-8">
             <div className="card-body">
               <h2 className="card-title">開催情報</h2>
-              <p>
-                開催日 : {EVENT_INFO.dates}<br />
-                開催場所 : <VenueLink /><br />
-                東京からの無料バス送迎あり！<br />
-                予定費用：{EVENT_INFO.price}<br/>
-              </p>
-              <p>他 何書けばいいかアイデアください～～～！！！！</p>
+              <EventInfo />
             </div>
           </div>
 
