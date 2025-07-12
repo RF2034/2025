@@ -22,40 +22,82 @@ export default async function Home() {
                 廃校で、踊ろう
               </h2>
               
-              <div className="mb-8 text-sm md:text-base leading-relaxed space-y-4 text-center">
-                <p>廃校になった小学校が、たった3日間だけ「自由な空間」に生まれ変わります――</p>
-                <p>
-                  参加者みんなで創りあげる、2泊3日のレイヴパーティ<br />
-                  モットーは、「{EVENT_INFO.motto}」
-                </p>
-                <p>
-                  イベント中は複数のDJフロアを巡りながら、<br />
-                  美味しいフードやドリンクを片手に音に身をゆだねましょう
-                </p>
-                <p>
-                  参加者によるミニDJイベント、こだわりのコーヒースタンドなど……<br />
-                  自由に、思い思いに楽しんでください
-                </p>
-                <p>「楽しみ方」は、あなた次第</p>
-                <br />
-                <p className="text-lg md:text-xl text-base-content font-bold">
-                  この場所でしか味わえない<br />
-                「あなただけの楽しみ方」を見つけましょう
+              <div className="mb-8 text-lg md:text-xl leading-relaxed">
+                <p className="mb-4">廃校になった小学校が、たった3日間だけ「自由な空間」に生まれ変わります</p>
+                <p className="text-xl md:text-2xl font-bold text-primary-content">
+                  {EVENT_INFO.motto}
                 </p>
               </div>
               
-              <div className="flex justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <RegistrationButton size="xl" />
+                <button className="btn btn-outline btn-lg">詳細を見る</button>
               </div>
             </div>
           </div>
         </section>
+
+        {/* コンセプトセクション */}
+        <section className="py-12 md:py-16 lg:py-20 px-4 bg-base-100">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12">
+              what is ガッコウレイヴ?
+            </h2>
+            
+            <div className="space-y-8 md:space-y-12">
+              <div className="space-y-6 text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto">
+                <p>
+                  参加者みんなで創りあげる、2泊3日のレイヴパーティ
+                </p>
+                <p>
+                  イベント中は複数のDJフロアを巡りながら <br />
+                  美味しいフードやドリンクを片手に音に身をゆだねましょう
+                </p>
+                <p>
+                  参加者によるミニDJイベント、こだわりのコーヒースタンドなど……
+                </p>
+                <p>
+                  自由に、思い思いに楽しんでください。
+                </p>
+                <div className="bg-accent/10 p-6 rounded-lg">
+                  <p className="text-lg md:text-xl font-semibold text-center">
+                    この場所でしか味わえない<br />
+                    「あなただけの楽しみ方」を見つけましょう
+                  </p>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div className="bg-base-200 p-6 rounded-lg text-center">
+                  <h3 className="font-bold text-lg mb-2">🎵 複数のDJフロア</h3>
+                  <p>様々なジャンルの音楽を楽しめます</p>
+                </div>
+                <div className="bg-base-200 p-6 rounded-lg text-center">
+                  <h3 className="font-bold text-lg mb-2">🍕 フード & ドリンク</h3>
+                  <p>美味しい料理とドリンクをご用意</p>
+                </div>
+                <div className="bg-base-200 p-6 rounded-lg text-center">
+                  <h3 className="font-bold text-lg mb-2">☕ 参加者企画</h3>
+                  <p>
+                    コーヒースタンド
+                    <br />
+                    キャンプファイヤーetc...
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-12 flex justify-center">
+              <RegistrationButton size="lg" />
+            </div>
+          </div>
+        </section>
         
-        {/* イントロダクションセクション */}
+        {/* イベント詳細セクション */}
         <section className="py-12 md:py-16 lg:py-20 px-4">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-8">
-              イベントについて
+              開催詳細
             </h2>
             <div className="text-center text-base md:text-lg leading-relaxed px-4 md:px-8">
               <EventInfo />
