@@ -12,7 +12,8 @@ export default function VenueLink({ className = "" }: VenueLinkProps) {
       rel="noopener noreferrer"
       className={`underline text-primary-content hover:text-primary-content/80 hover:no-underline transition-all duration-200 cursor-pointer ${className}`}
     >
-      {EVENT_INFO.venue.name}（{EVENT_INFO.venue.address}）
+      {EVENT_INFO.venue.name}<br />
+      （{EVENT_INFO.venue.address}）
     </a>
   );
 }
