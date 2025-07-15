@@ -35,7 +35,7 @@ export default async function Home() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <RegistrationButton size="xl" />
-                <Link href="/about" className="btn btn-lg">詳細を見る</Link>
+                <Link href="/about" className="btn btn-lg">概要を見る</Link>
               </div>
             </div>
           </div>
