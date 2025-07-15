@@ -51,11 +51,10 @@ export default async function Home() {
             <div className="space-y-8 md:space-y-12">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 <div className="card bg-base-200">
-                  <figure className="px-6 pt-6">
+                  <figure>
                     <img 
                       src="https://day1-images.schoolrave.net/DSC_0187.JPG" 
                       alt="DJフロアの様子"
-                      className="rounded-xl w-full h-32 object-cover"
                     />
                   </figure>
                   <div className="card-body text-center">
@@ -64,11 +63,10 @@ export default async function Home() {
                   </div>
                 </div>
                 <div className="card bg-base-200">
-                  <figure className="px-6 pt-6">
+                  <figure>
                     <img 
                       src="https://day1-images.schoolrave.net/DSC_0187.JPG" 
-                      alt="フード＆ドリンクの様子"
-                      className="rounded-xl w-full h-32 object-cover"
+                      alt="DJフロアの様子"
                     />
                   </figure>
                   <div className="card-body text-center">
@@ -77,11 +75,10 @@ export default async function Home() {
                   </div>
                 </div>
                 <div className="card bg-base-200">
-                  <figure className="px-6 pt-6">
+                  <figure>
                     <img 
                       src="https://day1-images.schoolrave.net/DSC_0187.JPG" 
-                      alt="参加者企画の様子"
-                      className="rounded-xl w-full h-32 object-cover"
+                      alt="DJフロアの様子"
                     />
                   </figure>
                   <div className="card-body text-center">
