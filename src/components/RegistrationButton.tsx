@@ -1,15 +1,17 @@
 import { EVENT_INFO } from "@/constants/eventInfo";
 
 interface RegistrationButtonProps {
-  size?: "sm" | "md" | "lg" | "xl";
+  size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
   className?: string;
 }
 
 export default function RegistrationButton({ size = "md", className = "" }: RegistrationButtonProps) {
-  const sizeClass = size === "xl" ? "btn btn-xl" :
-                   size === "lg" ? "btn btn-lg" : 
-                   size === "sm" ? "btn-sm md:btn-md" : 
-                   "btn-md";
+  const sizeClass = size === "3xl" ? "btn text-2xl px-14 py-8" :
+                    size === "2xl" ? "btn text-xl px-10 py-8" :
+                    size === "xl" ? "btn btn-xl" :
+                    size === "lg" ? "btn btn-lg" : 
+                    size === "sm" ? "btn-sm md:btn-md" : 
+                    "btn-md";
 
   return (
     <a 

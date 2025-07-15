@@ -33,8 +33,8 @@ export default async function Home() {
                 廃校で、踊ろう
               </h2>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <RegistrationButton size="xl" />
+              <div className="flex flex-col gap-4 justify-center items-center">
+                <RegistrationButton size="3xl" />
                 <Link href="/about" className="btn btn-lg">概要を見る</Link>
               </div>
             </div>

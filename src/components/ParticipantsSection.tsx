@@ -246,7 +246,7 @@ export default function ParticipantsSection({ participants = [] }: ParticipantsS
           <p className="text-base-content/80 mb-4">
             あなたも一緒に参加しませんか？
           </p>
-          <RegistrationButton size="xl" />
+          <RegistrationButton size="2xl" />
         </div>
       </div>
     </section>
