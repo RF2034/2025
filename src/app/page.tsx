@@ -127,7 +127,9 @@ export default async function Home() {
         <div className="divider"></div>
 
         {/* 現在の参加者セクション */}
-        <ParticipantsSection />
+        <section id="participants">
+          <ParticipantsSection />
+        </section>
       </main>
       <Footer />
     </div>

@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { EVENT_INFO } from "@/constants/eventInfo";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: `イベント概要 - ${EVENT_INFO.title}`,
@@ -21,6 +22,11 @@ export default function About() {
             <div className="card-body">
               <h2 className="card-title">開催情報</h2>
               <EventInfo />
+              <div className="mt-4">
+                <Link href="/#participants" className="btn btn-outline">
+                  現在の料金はこちら
+                </Link>
+              </div>
             </div>
           </div>
 
