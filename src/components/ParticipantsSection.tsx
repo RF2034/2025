@@ -93,6 +93,7 @@ export default function ParticipantsSection({ participants = [] }: ParticipantsS
     }
   };
 
+
   return (
     <section className="py-12 md:py-16 lg:py-20 px-4">
       <div className="container mx-auto max-w-6xl">
@@ -169,8 +170,15 @@ export default function ParticipantsSection({ participants = [] }: ParticipantsS
             </div>
           </div>
         </div>
+        
+        <div className="text-center mt-16">
+          <p className="text-base-content/80 mb-4">
+            あなたも一緒に参加しませんか？
+          </p>
+          <RegistrationButton size="3xl" />
+        </div>
 
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 mt-16">
           現在の参加者
         </h2>
         
@@ -189,9 +197,9 @@ export default function ParticipantsSection({ participants = [] }: ParticipantsS
             <p className="text-base-content/80 text-sm">{error}</p>
           </div>
         ) : displayParticipants.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {displayParticipants.map((participant, index) => (
-              <div key={index} className="card bg-base-100 relative overflow-hidden shadow-xs">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {[...displayParticipants].reverse().map((participant, index) => (
+              <div key={`participant-${index}`} className="card bg-base-100 relative overflow-hidden shadow-xs">
                 <div className="card-body">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
@@ -240,13 +248,6 @@ export default function ParticipantsSection({ participants = [] }: ParticipantsS
             </p>
           </div>
         )}
-        
-        <div className="text-center mt-8">
-          <p className="text-base-content/80 mb-4">
-            あなたも一緒に参加しませんか？
-          </p>
-          <RegistrationButton size="2xl" />
-        </div>
       </div>
     </section>
   );
