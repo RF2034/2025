@@ -88,7 +88,7 @@ export default async function Home() {
             <div className="mt-8 flex justify-center">
               <iframe
                 src={EVENT_INFO.googleMapsEmbedUrl}
-                width="600" 
+                width="800" 
                 height="450" 
                 title="泊まれる学校 さる小の地図"
                 allowFullScreen={true} 
