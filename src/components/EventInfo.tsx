@@ -4,12 +4,11 @@ import { EVENT_INFO } from "@/constants/eventInfo";
 import VenueLink from "./VenueLink";
 
 interface EventInfoProps {
-  showPrice?: boolean;
   layout?: "vertical" | "horizontal";
   className?: string;
 }
 
-export default function EventInfo({ showPrice = true, layout = "vertical", className = "" }: EventInfoProps) {
+export default function EventInfo({ layout = "vertical", className = "" }: EventInfoProps) {
   const containerClass = layout === "horizontal" ? "space-y-2" : "space-y-2";
   return (
     <div className={`${containerClass} ${className}`}>
@@ -19,11 +18,6 @@ export default function EventInfo({ showPrice = true, layout = "vertical", class
       <p className="text-base-content/90">
         開催場所：<VenueLink />
       </p>
-      {showPrice && (
-        <>
-          <p>東京からの無料バス送迎あり！</p>
-        </>
-      )}
     </div>
   );
 }

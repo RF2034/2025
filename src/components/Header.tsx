@@ -1,5 +1,4 @@
 import Link from "next/link";
-import RegistrationButton from "./RegistrationButton";
 
 export default function Header() {
   const navItems = [
@@ -53,7 +52,6 @@ export default function Header() {
         </ul>
       </div>
       <div className="navbar-end">
-        <RegistrationButton size="sm" />
       </div>
     </header>
   );
