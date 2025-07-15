@@ -14,7 +14,7 @@ export default function About() {
     <div className="min-h-screen bg-base-200 pt-16">
       <Header />
       <main className="container mx-auto px-4 py-16 text-base-content">
-        <h1 className="text-4xl font-bold text-center mb-12">イベント概要</h1>
+        <h1 className="text-4xl font-bold text-center mb-12">概要</h1>
         
         <div className="space-y-8">
           <div className="card bg-base-100 mb-8">
