@@ -85,15 +85,15 @@ export default async function Home() {
               <EventInfo />
             </div>
             
-            <div className="mt-8 flex justify-center">
+          <div className="aspect-video w-full">
               <iframe
-                src={EVENT_INFO.googleMapsEmbedUrl}
-                width="1000" 
-                height="450" 
+                src={`${EVENT_INFO.googleMapsEmbedUrl}&zoom=6&language=ja&region=JP`}
+                width="100%"
+                height="100%"
                 title="泊まれる学校 さる小の地図"
                 allowFullScreen={true} 
                 referrerPolicy="no-referrer-when-downgrade"
-                className="rounded-lg max-w-full border-0"
+                className="rounded-lg border-0 w-full h-full"
               >
               </iframe>
             </div>
