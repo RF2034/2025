@@ -132,11 +132,6 @@ export default function ParticipantsSection({ participants = [] }: ParticipantsS
                       style={{ width: `${progress}%` }}
                     />
                   </div>
-                  <div className="text-center mt-2">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/20 text-primary">
-                      {currentParticipants}人参加中
-                    </span>
-                  </div>
                 </div>
 
                 {/* 次の階層への案内 */}
@@ -175,9 +170,13 @@ export default function ParticipantsSection({ participants = [] }: ParticipantsS
           </div>
         </div>
 
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4">
           現在の参加者
         </h2>
+        
+        <p className="text-center text-lg text-base-content/80 mb-8">
+          参加者{currentParticipants}人
+        </p>
         
         {loading && displayParticipants.length === 0 ? (
           <div className="text-center">
