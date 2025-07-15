@@ -50,21 +50,48 @@ export default async function Home() {
             
             <div className="space-y-8 md:space-y-12">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                <div className="bg-base-200 p-6 rounded-lg text-center">
-                  <h3 className="font-bold text-lg mb-2">🎵 複数のDJフロア</h3>
-                  <p>様々なジャンルの音楽を楽しめます</p>
+                <div className="card bg-base-200">
+                  <figure className="px-6 pt-6">
+                    <img 
+                      src="https://day1-images.schoolrave.net/DSC_0187.JPG" 
+                      alt="DJフロアの様子"
+                      className="rounded-xl w-full h-32 object-cover"
+                    />
+                  </figure>
+                  <div className="card-body text-center">
+                    <h3 className="card-title justify-center text-lg mb-2">🎵 複数のDJフロア</h3>
+                    <p>様々なジャンルの音楽を楽しめます</p>
+                  </div>
                 </div>
-                <div className="bg-base-200 p-6 rounded-lg text-center">
-                  <h3 className="font-bold text-lg mb-2">🍕 フード & ドリンク</h3>
-                  <p>美味しい料理とドリンクをご用意</p>
+                <div className="card bg-base-200">
+                  <figure className="px-6 pt-6">
+                    <img 
+                      src="https://day1-images.schoolrave.net/DSC_0187.JPG" 
+                      alt="フード＆ドリンクの様子"
+                      className="rounded-xl w-full h-32 object-cover"
+                    />
+                  </figure>
+                  <div className="card-body text-center">
+                    <h3 className="card-title justify-center text-lg mb-2">🍕 フード & ドリンク</h3>
+                    <p>美味しい料理とドリンクをご用意</p>
+                  </div>
                 </div>
-                <div className="bg-base-200 p-6 rounded-lg text-center">
-                  <h3 className="font-bold text-lg mb-2">☕ 参加者企画</h3>
-                  <p>
-                    コーヒースタンド
-                    <br />
-                    キャンプファイヤーetc...
-                  </p>
+                <div className="card bg-base-200">
+                  <figure className="px-6 pt-6">
+                    <img 
+                      src="https://day1-images.schoolrave.net/DSC_0187.JPG" 
+                      alt="参加者企画の様子"
+                      className="rounded-xl w-full h-32 object-cover"
+                    />
+                  </figure>
+                  <div className="card-body text-center">
+                    <h3 className="card-title justify-center text-lg mb-2">☕ 参加者企画</h3>
+                    <p>
+                      コーヒースタンド
+                      <br />
+                      キャンプファイヤーetc...
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
