@@ -12,12 +12,22 @@ export default async function Home() {
       <Header />
       <main>
         {/* ヒーローセクション */}
-        <section className="hero min-h-screen bg-gradient-to-br from-primary to-secondary px-4">
+        <section className="hero min-h-screen"
+          style={{
+            backgroundImage:
+            "url(https://day1-images.schoolrave.net/DSC_0039.JPG)",
+          }}
+        >
+          <div className="hero-overlay"></div>
           <div className="hero-content text-center text-base-content">
             <div className="max-w-sm md:max-w-md lg:max-w-2xl mx-auto">
-              <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                {EVENT_INFO.title}
-              </h1>
+              <div className="mb-8">
+                <img 
+                  src="https://images.schoolrave.net/%E3%82%AC%E3%83%83%E3%82%B3%E3%82%A6%E3%83%AC%E3%82%A4%E3%83%B4_logo_%E9%BB%92.png"
+                  alt="ガッコウレイヴ ロゴ"
+                  className="w-72 md:w-96 lg:w-[50rem] xl:w-[80rem] mx-auto mb-6"
+                />
+              </div>
               
               <h2 className="mb-8 text-2xl md:text-3xl lg:text-4xl font-bold text-base-content">
                 廃校で、踊ろう
