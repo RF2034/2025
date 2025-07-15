@@ -70,7 +70,7 @@ export default async function Home() {
             </div>
             
             <div className="mt-12 flex justify-center">
-              <RegistrationButton size="lg" />
+              <Link href="/about" className="btn btn-lg">概要を見る</Link>
             </div>
           </div>
         </section>
