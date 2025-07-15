@@ -49,28 +49,6 @@ export default async function Home() {
             </h2>
             
             <div className="space-y-8 md:space-y-12">
-              <div className="space-y-6 text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto">
-                <p>
-                  参加者みんなで創りあげる、2泊3日のレイヴパーティ
-                </p>
-                <p>
-                  イベント中は複数のDJフロアを巡りながら <br />
-                  美味しいフードやドリンクを片手に音に身をゆだねましょう
-                </p>
-                <p>
-                  参加者によるミニDJイベント、こだわりのコーヒースタンドなど……
-                </p>
-                <p>
-                  自由に、思い思いに楽しんでください。
-                </p>
-                <div className="bg-base-200 p-6 rounded-lg">
-                  <p className="text-lg md:text-xl font-semibold text-center">
-                    この場所でしか味わえない<br />
-                    「あなただけの楽しみ方」を見つけましょう
-                  </p>
-                </div>
-              </div>
-              
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 <div className="bg-base-200 p-6 rounded-lg text-center">
                   <h3 className="font-bold text-lg mb-2">🎵 複数のDJフロア</h3>
