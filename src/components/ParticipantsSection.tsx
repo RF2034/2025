@@ -107,7 +107,7 @@ export default function ParticipantsSection({ participants = [] }: ParticipantsS
               <div className="flex flex-col items-center space-y-4">
                 {/* 現在の料金表示 */}
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-primary-content">
+                  <div className="text-3xl md:text-4xl font-bold text-primary">
                     ¥{currentTier.price.toLocaleString()}
                   </div>
                   <div className="text-sm text-base-content/80">
@@ -133,7 +133,7 @@ export default function ParticipantsSection({ participants = [] }: ParticipantsS
                     />
                   </div>
                   <div className="text-center mt-2">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/20 text-primary-content">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/20 text-primary">
                       {currentParticipants}人参加中
                     </span>
                   </div>
