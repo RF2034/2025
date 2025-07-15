@@ -23,22 +23,15 @@ export default async function Home() {
             <div className="max-w-sm md:max-w-md lg:max-w-2xl mx-auto">
               <div className="mb-8">
                 <img 
-                  src="https://images.schoolrave.net/%E3%82%AC%E3%83%83%E3%82%B3%E3%82%A6%E3%83%AC%E3%82%A4%E3%83%B4_logo_%E9%BB%92.png"
+                  src="https://images.schoolrave.net/%E3%82%AC%E3%83%83%E3%82%B3%E3%82%A6%E3%83%AC%E3%82%A4%E3%83%B4_logo_%E7%99%BD.png"
                   alt="ガッコウレイヴ ロゴ"
                   className="w-72 md:w-96 lg:w-[50rem] xl:w-[80rem] mx-auto mb-6"
                 />
               </div>
               
-              <h2 className="mb-8 text-2xl md:text-3xl lg:text-4xl font-bold text-base-content">
+              <h2 className="mb-8 text-2xl md:text-3xl lg:text-4xl font-bold text-white">
                 廃校で、踊ろう
               </h2>
-              
-              <div className="mb-8 text-lg md:text-xl leading-relaxed">
-                <p className="mb-4">廃校になった小学校が、たった3日間だけ「自由な空間」に生まれ変わります</p>
-                <p className="text-xl md:text-2xl font-bold text-primary-content">
-                  {EVENT_INFO.motto}
-                </p>
-              </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <RegistrationButton size="xl" />
