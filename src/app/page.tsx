@@ -15,7 +15,7 @@ export default async function Home() {
         <section className="hero min-h-screen"
           style={{
             backgroundImage:
-            "url(https://day1-images.schoolrave.net/DSC_0039.JPG)",
+            "url(https://images.schoolrave.net/cdn-cgi/image/f=webp/day1_DSC_0039.JPG)",
           }}
         >
           <div className="hero-overlay"></div>
@@ -23,7 +23,7 @@ export default async function Home() {
             <div className="max-w-sm md:max-w-md lg:max-w-2xl mx-auto">
               <div className="mb-8">
                 <img 
-                  src="https://images.schoolrave.net/%E3%82%AC%E3%83%83%E3%82%B3%E3%82%A6%E3%83%AC%E3%82%A4%E3%83%B4_logo_%E7%99%BD.png"
+                  src="https://logos.schoolrave.net/cdn-cgi/image/f=webp/schoolrave_logo_W.png"
                   alt="ガッコウレイヴ ロゴ"
                   className="w-72 md:w-96 lg:w-[50rem] xl:w-[80rem] mx-auto mb-6"
                 />
@@ -53,7 +53,7 @@ export default async function Home() {
                 <div className="card bg-base-200">
                   <figure>
                     <img 
-                      src="https://day1-images.schoolrave.net/DSC_0187.JPG" 
+                      src="https://images.schoolrave.net/cdn-cgi/image/f=webp/day1_DSC_0039.JPG" 
                       alt="DJフロアの様子"
                     />
                   </figure>
@@ -65,7 +65,7 @@ export default async function Home() {
                 <div className="card bg-base-200">
                   <figure>
                     <img 
-                      src="https://day1-images.schoolrave.net/DSC_0187.JPG" 
+                      src="https://images.schoolrave.net/cdn-cgi/image/f=webp/day1_DSC_0039.JPG" 
                       alt="DJフロアの様子"
                     />
                   </figure>
@@ -77,7 +77,7 @@ export default async function Home() {
                 <div className="card bg-base-200">
                   <figure>
                     <img 
-                      src="https://day1-images.schoolrave.net/DSC_0187.JPG" 
+                      src="https://images.schoolrave.net/cdn-cgi/image/f=webp/day1_DSC_0039.JPG" 
                       alt="DJフロアの様子"
                     />
                   </figure>
@@ -113,7 +113,7 @@ export default async function Home() {
             <div className="mt-8 mb-8 flex justify-center">
               <div className="card bg-gradient-to-r from-primary/10 to-secondary/10 max-w-sm">
                 <div className="card-body text-center py-6">
-                  <h3 className="text-lg font-semibold text-base-content/90">
+                  <h3 className="text-xl font-black text-base-content/90">
                     🚌 東京からの無料バスあり！
                   </h3>
                 </div>
