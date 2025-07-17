@@ -1,15 +1,14 @@
 import RegistrationButton from "@/components/RegistrationButton";
 import Link from "next/link";
+import HeroSlideshow from "./HeroSlideshow";
 
 const HeroSection = () => (
-  <section className="hero min-h-screen"
-    style={{
-      backgroundImage:
-        "url(https://images.schoolrave.net/cdn-cgi/image/f=webp/day1_DSC_0039.JPG)",
-    }}
-  >
-    <div className="hero-overlay"></div>
-    <div className="hero-content text-center text-base-content">
+  <section className="hero min-h-screen relative">
+    <HeroSlideshow />
+    <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+      <div className="hero-overlay"></div>
+    </div>
+    <div className="hero-content text-center text-base-content relative z-10">
       <div className="max-w-sm md:max-w-md lg:max-w-2xl mx-auto">
         <div className="mb-8">
           <img

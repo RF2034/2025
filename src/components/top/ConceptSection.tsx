@@ -11,7 +11,7 @@ const ConceptSection = () => (
           <div className="card bg-base-200">
             <figure>
               <img
-                src="https://images.schoolrave.net/cdn-cgi/image/f=webp/day1_DSC_0039.JPG"
+                src="https://images.schoolrave.net/cdn-cgi/image/f=webp/DSC_0447.webp"
                 alt="DJフロアの様子"
               />
             </figure>
@@ -23,8 +23,8 @@ const ConceptSection = () => (
           <div className="card bg-base-200">
             <figure>
               <img
-                src="https://images.schoolrave.net/cdn-cgi/image/f=webp/day1_DSC_0039.JPG"
-                alt="DJフロアの様子"
+                src="https://images.schoolrave.net/cdn-cgi/image/f=webp/DSC_0207.webp"
+                alt="フード & ドリンクの様子"
               />
             </figure>
             <div className="card-body text-center">
@@ -35,8 +35,8 @@ const ConceptSection = () => (
           <div className="card bg-base-200">
             <figure>
               <img
-                src="https://images.schoolrave.net/cdn-cgi/image/f=webp/day1_DSC_0039.JPG"
-                alt="DJフロアの様子"
+                src="https://images.schoolrave.net/cdn-cgi/image/f=webp/DSC_0094.webp"
+                alt="コーヒースタンドの様子"
               />
             </figure>
             <div className="card-body text-center">
