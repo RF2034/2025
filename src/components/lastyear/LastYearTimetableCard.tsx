@@ -39,7 +39,7 @@ const day3: TimetableItem[] = [
   { time: "20:00", description: "新宿駅到着・解散" },
 ];
 
-export default function AboutTimetableCard() {
+export default function LastYearTimetableCard() {
   return (
     <div className="card bg-base-100 mb-8">
       <div className="card-body">

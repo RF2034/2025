@@ -1,7 +1,6 @@
-
-import AboutEventInfoCard from "@/components/AboutEventInfoCard";
-import AboutParticipationCard from "@/components/AboutParticipationCard";
-import AboutTimetableCard from "@/components/AboutTimetableCard";
+import AboutEventInfoCard from "@/components/about/AboutEventInfoCard";
+import AboutParticipationCard from "@/components/about/AboutParticipationCard";
+import AboutPlansCard from "@/components/about/AboutPlansCard";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { EVENT_INFO } from "@/constants/eventInfo";
@@ -22,7 +21,7 @@ export default function About() {
         <div className="space-y-8">
           <AboutEventInfoCard />
           <AboutParticipationCard />
-          <AboutTimetableCard />
+          <AboutPlansCard />
         </div>
 
       </main>
