@@ -9,10 +9,12 @@ const images = [
   "https://images.schoolrave.net/cdn-cgi/image/f=webp/DSC_0300.webp",
 ];
 
-const SLIDE_INTERVAL = 8000; // 5秒ごとに切り替え
+const SLIDE_INTERVAL = 10000;
 
 const HeroSlideshow = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [nextIndex, setNextIndex] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // 画像プリロード
   useEffect(() => {
@@ -24,11 +26,18 @@ const HeroSlideshow = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setIsTransitioning(true);
+      
+      setTimeout(() => {
+        // トランジション完了後、状態を更新
+        setCurrentIndex(nextIndex);
+        setNextIndex((nextIndex + 1) % images.length);
+        setIsTransitioning(false);
+      }, 500); // トランジション時間と同じ
     }, SLIDE_INTERVAL);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [nextIndex]);
 
   return (
     <div
@@ -38,19 +47,39 @@ const HeroSlideshow = () => {
         pointerEvents: "none",
       }}
     >
-      {/* 現在の画像のみ表示（カット切り替え） */}
-      <div
+      {/* 現在の画像 */}
+      <img
+        src={images[currentIndex]}
+        alt=""
         style={{
-          backgroundImage: `url(${images[currentIndex]})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
           width: "100%",
           height: "100%",
+          objectFit: "cover",
           position: "absolute",
           inset: 0,
           opacity: 1,
+          transition: "opacity 0.5s ease-in-out",
         }}
+        draggable={false}
       />
+      
+      {/* 次の画像（トランジション中のみ表示） */}
+      {isTransitioning && (
+        <img
+          src={images[nextIndex]}
+          alt=""
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            position: "absolute",
+            inset: 0,
+            opacity: 1,
+            transition: "opacity 0.5s ease-in-out",
+          }}
+          draggable={false}
+        />
+      )}
     </div>
   );
 };
