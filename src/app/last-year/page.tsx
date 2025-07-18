@@ -1,8 +1,8 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import LastYearTimetableCard from "@/components/lastyear/LastYearTimetableCard";
-import PhotoGallery from "@/components/PhotoGallery";
-import VoicesSection from "@/components/VoicesSection";
+import PhotoGallery from "@/components/lastyear/PhotoGallery";
+import VoicesSection from "@/components/lastyear/VoicesSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
