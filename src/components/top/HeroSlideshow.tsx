@@ -1,4 +1,6 @@
+
 "use client";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const images = [
@@ -9,7 +11,7 @@ const images = [
   "https://images.schoolrave.net/cdn-cgi/image/f=webp/DSC_0300.webp",
 ];
 
-const SLIDE_INTERVAL = 10000;
+const SLIDE_INTERVAL = 5000;
 
 const HeroSlideshow = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -48,36 +50,29 @@ const HeroSlideshow = () => {
       }}
     >
       {/* 現在の画像 */}
-      <img
+      <Image
         src={images[currentIndex]}
         alt=""
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          position: "absolute",
-          inset: 0,
-          opacity: 1,
-          transition: "opacity 0.5s ease-in-out",
-        }}
+        fill
+        priority
+        sizes="100vw"
+        className="!w-full !h-full !object-cover !absolute !inset-0"
+        style={{ opacity: 1, transition: "opacity 0.5s ease-in-out", pointerEvents: "none" }}
         draggable={false}
+        unoptimized
       />
-      
+
       {/* 次の画像（トランジション中のみ表示） */}
       {isTransitioning && (
-        <img
+        <Image
           src={images[nextIndex]}
           alt=""
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            position: "absolute",
-            inset: 0,
-            opacity: 1,
-            transition: "opacity 0.5s ease-in-out",
-          }}
+          fill
+          sizes="100vw"
+          className="!w-full !h-full !object-cover !absolute !inset-0"
+          style={{ opacity: 1, transition: "opacity 0.5s ease-in-out", pointerEvents: "none" }}
           draggable={false}
+          unoptimized
         />
       )}
     </div>
