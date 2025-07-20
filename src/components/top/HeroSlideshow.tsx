@@ -11,7 +11,7 @@ const images = [
   "https://images.schoolrave.net/cdn-cgi/image/f=webp/DSC_0300.webp",
 ];
 
-const SLIDE_INTERVAL = 5000;
+const SLIDE_INTERVAL = 4000;
 
 const HeroSlideshow = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
