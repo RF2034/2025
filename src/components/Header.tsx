@@ -30,7 +30,7 @@ export default function Header() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[60] mt-3 w-60 p-2 border"
+            className="menu menu-sm dropdown-content bg-base-200 rounded-box z-[60] mt-3 w-60 p-2 border border-base-300 shadow-sm text-base"
           >
             {navItems.map((item) => (
               <li key={item.href}>
