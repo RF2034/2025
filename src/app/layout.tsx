@@ -40,6 +40,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" className={bizUDPGothic.variable}>
+      <head>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+      </head>
       <body className={bizUDPGothic.className}>
         {children}
       </body>
