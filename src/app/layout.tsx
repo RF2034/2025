@@ -22,6 +22,14 @@ export const metadata: Metadata = {
     siteName: "ガッコウレイヴ",
     locale: "ja_JP",
     type: "website",
+    images: [
+      {
+        url: "https://logos.schoolrave.net/cdn-cgi/image/f=webp/schoolrave_OGP_B.png",
+        width: 1200,
+        height: 630,
+        alt: "ガッコウレイヴ2025 OGP画像"
+      }
+    ]
   }
 };
 
@@ -32,6 +40,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" className={bizUDPGothic.variable}>
+      <head>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+      </head>
       <body className={bizUDPGothic.className}>
         {children}
       </body>

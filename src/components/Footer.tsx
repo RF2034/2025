@@ -1,22 +1,8 @@
 import { SOCIAL_LINKS } from "@/constants/eventInfo";
-import Link from "next/link";
 
 export default function Footer() {
-  const navItems = [
-    { href: "/about", label: "概要" },
-    { href: "/last-year", label: "昨年の様子" },
-    { href: "/faq", label: "FAQ" }
-  ];
-
   return (
     <footer className="footer footer-center bg-neutral text-neutral-content p-6 md:p-10">
-      <nav className="flex flex-wrap justify-center gap-3 md:gap-6 mb-4">
-        {navItems.map((item) => (
-          <Link key={item.href} href={item.href} className="link link-hover text-sm md:text-base">
-            {item.label}
-          </Link>
-        ))}
-      </nav>
       <nav className="mb-4">
         <div className="flex justify-center gap-4 md:gap-6">
           <a href={SOCIAL_LINKS.twitter} className="btn btn-ghost btn-sm btn-circle" aria-label="X" target="_blank" rel="noopener noreferrer">

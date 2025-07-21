@@ -214,10 +214,8 @@ export default function ParticipantsSection({ participants = [] }: ParticipantsS
                           </div>
                         </div>
                       ) : (
-                        <div className="avatar placeholder">
-                          <div className="bg-neutral text-neutral-content w-10 h-10 rounded-full">
-                            <span className="text-sm">{participant.name.charAt(0)}</span>
-                          </div>
+                        <div className="avatar flex items-center justify-center w-14 h-14 bg-neutral text-neutral-content rounded-[30%]">
+                          <i className="ri-user-fill text-4xl leading-none" aria-label="デフォルトアイコン"></i>
                         </div>
                       )}
                       <h3 className="card-title text-lg">{participant.name}</h3>
