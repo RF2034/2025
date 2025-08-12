@@ -7,7 +7,7 @@ const day1: TimetableItem[] = [
   { time: "18:00", description: "施設の全体案内&注意事項説明" },
   { time: "19:00", description: "夕食タイム" },
   { time: "21:00", description: "全ブースDJスタート" },
-  { description: "日を囲む会 @BBQスペース" },
+  { description: "火を囲む会 @BBQスペース" },
   { description: "A面打破（APOP） @音楽室" },
   { time: "22:00", description: "キャンドルナイト（chill） @図書室" },
   { time: "24:00", description: "夜食タイム" },
