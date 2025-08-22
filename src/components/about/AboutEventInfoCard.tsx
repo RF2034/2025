@@ -13,7 +13,18 @@ export default function AboutEventInfoCard() {
           <Link href="/#participants" className="btn btn-outline">
             現在の料金はこちら
           </Link>
+          <div className="mt-2 text-sm">
+            <div>キャンセル料</div>
+            <ul className="list-disc list-inside">
+              <li>3ケ月前～：10％</li>
+              <li>1カ月前～：30％</li>
+              <li>2週間前～：50％</li>
+              <li>3日前～：70％</li>
+              <li>当日：100％</li>
+            </ul>
+          </div>
         </div>
+
       </div>
     </div>
   );
