@@ -2,7 +2,6 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import LastYearTimetableCard from "@/components/lastyear/LastYearTimetableCard";
 import PhotoGallery from "@/components/lastyear/PhotoGallery";
-import VoicesSection from "@/components/lastyear/VoicesSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,7 +18,7 @@ export default function LastYear() {
         
         <div className="space-y-12">
           <PhotoGallery />
-          <VoicesSection />
+          {/* <VoicesSection /> */}
           <LastYearTimetableCard />
         </div>
       </main>
