@@ -1,4 +1,5 @@
 import AboutEventInfoCard from "@/components/about/AboutEventInfoCard";
+import AboutIntro from "@/components/about/AboutIntro";
 import AboutParticipationCard from "@/components/about/AboutParticipationCard";
 import AboutPlansCard from "@/components/about/AboutPlansCard";
 import Footer from "@/components/Footer";
@@ -21,6 +22,7 @@ export default function About() {
         <div className="space-y-8">
           <AboutEventInfoCard />
           <AboutParticipationCard />
+          <AboutIntro />
           <AboutPlansCard />
         </div>
 

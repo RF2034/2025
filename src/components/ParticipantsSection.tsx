@@ -1,18 +1,7 @@
 'use client'
 
 import RegistrationButton from "@/components/RegistrationButton";
-import { useSheetsData } from "@/hooks/useSheetsData";
-
-interface Participant {
-  name: string;
-  comment: string;
-  socialUrl?: string;
-  iconUrl?: string;
-}
-
-interface ParticipantsSectionProps {
-  participants?: Participant[];
-}
+import participants from "@/constants/participants";
 
 // 料金階層の定義
 const PRICE_TIERS = [
@@ -22,12 +11,8 @@ const PRICE_TIERS = [
   { minParticipants: 45, price: 40000, nextTier: 50 }
 ];
 
-export default function ParticipantsSection({ participants = [] }: ParticipantsSectionProps) {
-  const { data, loading, error } = useSheetsData(5); // 5分間隔で更新
-  
-  // APIから取得したデータを優先し、フォールバックとしてpropsを使用
-  const displayParticipants = data.length > 0 ? data : participants;
-  const currentParticipants = displayParticipants.length;
+export default function ParticipantsSection() {
+  const currentParticipants = participants.length;
 
   // 現在の料金階層を取得
   const getCurrentTier = (count: number) => {
@@ -186,19 +171,9 @@ export default function ParticipantsSection({ participants = [] }: ParticipantsS
           参加者{currentParticipants}人
         </p>
         
-        {loading && displayParticipants.length === 0 ? (
-          <div className="text-center">
-            <span className="loading loading-spinner loading-md"></span>
-            <p className="text-base-content/80 mt-2">参加者データを読み込み中...</p>
-          </div>
-        ) : error ? (
-          <div className="text-center">
-            <p className="text-error mb-4">データの取得に失敗しました</p>
-            <p className="text-base-content/80 text-sm">{error}</p>
-          </div>
-        ) : displayParticipants.length > 0 ? (
+        {participants.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {[...displayParticipants].reverse().map((participant, index) => (
+            {[...participants].reverse().map((participant, index) => (
               <div key={`participant-${index}`} className="card bg-base-100 relative overflow-hidden shadow-xs">
                 <div className="card-body">
                   <div className="flex items-center justify-between mb-4">
