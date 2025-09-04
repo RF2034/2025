@@ -8,6 +8,7 @@ export interface Participant {
 }
 
 const participants: Participant[] = [
+  { name: "正宗", socialUrl: "https://x.com/Masamune_HS", comment: "主催です、今年も楽しんでいきましょう。", iconUrl: "https://pbs.twimg.com/profile_images/1179249708864163840/6Rt_VgNR_400x400.jpg"},
   { name: "釖(料理長)", socialUrl: "https://x.com/oriharakatana", comment: "全員俺と胃袋のMAVになって欲しいんだ", iconUrl: "https://pbs.twimg.com/profile_images/1459826223606280197/g4dwLZVC_400x400.jpg" },
   { name: "IK", socialUrl: "https://x.com/Tec_hnoBreaker", comment: "酒、飯、音、全部満喫します", iconUrl: "https://pbs.twimg.com/profile_images/1422972035685228545/az3W9KRm_400x400.jpg" },
   { name: "虹水晶(調理補佐)", socialUrl: "https://x.com/suisyou_rainbow", comment: "食事に関してはおまかせください！！", iconUrl: "https://pbs.twimg.com/profile_images/1641986250822524931/DIxa97cp_400x400.jpg" },
@@ -21,9 +22,8 @@ const participants: Participant[] = [
   { name: "しいたけ", socialUrl: "https://x.com/s3atake", iconUrl: "https://pbs.twimg.com/profile_images/485402650460946432/cFlrHjiH_400x400.jpeg" },
   { name: "まーぴょん", socialUrl: "https://x.com/UsuwoLaboratory", comment: "初参加なので楽しみof楽しみです～～", iconUrl: "https://pbs.twimg.com/profile_images/1505088834887122948/Lv2OSLbw_400x400.png" },
   { name: "メジエド", socialUrl: "https://x.com/m1edjed", comment: "今年も運営をやります。よろしくお願いいたします", iconUrl: "https://pbs.twimg.com/profile_images/1282726569346084864/Mi8ynuBx_400x400.jpg" },
-  { name: "正宗" },
-  { name: "みそぎちゃん" },
-  { name: "SMACK17" },
+  { name: "みそぎちゃん"},
+  { name: "SMACK17", socialUrl: "https://x.com/SMACK17", comment: "いっぱい遊ぶぞ～い" , iconUrl: "https://pbs.twimg.com/profile_images/1670147346171326466/bnrgIsRD_400x400.jpg" },
   { name: "asanoappy" },
   { name: "twoway" },
   { name: "kaki0121" },
