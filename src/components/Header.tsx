@@ -1,4 +1,5 @@
 import Link from "next/link";
+import XShareButton from "./XShareButton";
 
 export default function Header() {
   const navItems = [
@@ -39,6 +40,11 @@ export default function Header() {
                 </Link>
               </li>
             ))}
+            <li>
+              <div className="py-3">
+                <XShareButton size="sm" className="w-full" />
+              </div>
+            </li>
           </ul>
         </div>
       </div>
@@ -52,6 +58,7 @@ export default function Header() {
         </ul>
       </div>
       <div className="navbar-end">
+        <XShareButton size="sm" className="hidden sm:inline-flex" />
       </div>
     </header>
   );
