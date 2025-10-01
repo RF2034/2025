@@ -1,3 +1,4 @@
+import FloatingXShareButton from "@/components/FloatingXShareButton";
 import { EVENT_INFO } from "@/constants/eventInfo";
 import type { Metadata } from "next";
 import { BIZ_UDPGothic } from "next/font/google";
@@ -45,6 +46,7 @@ export default function RootLayout({
       </head>
       <body className={bizUDPGothic.className}>
         {children}
+        <FloatingXShareButton />
       </body>
     </html>
   );
