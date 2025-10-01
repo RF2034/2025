@@ -31,7 +31,9 @@ const participants: Participant[] = [
   { name: "すずか" },
   { name: "KXA" },
   { name: "ふにゃ" },
-  { name: "Jackit" }
+  { name: "Jackit" },
+  { name: "モリキリデコイツ" },
+  { name: "カジ" },
 ];
 
 export default participants;
