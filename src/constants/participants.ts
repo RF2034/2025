@@ -34,6 +34,7 @@ const participants: Participant[] = [
   { name: "Jackit" },
   { name: "モリキリデコイツ" },
   { name: "ポテト" },
+  { name: "独逸" }
 ];
 
 export default participants;
