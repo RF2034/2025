@@ -22,7 +22,6 @@ const participants: Participant[] = [
   { name: "しいたけ", socialUrl: "https://x.com/s3atake", iconUrl: "https://pbs.twimg.com/profile_images/485402650460946432/cFlrHjiH_400x400.jpeg" },
   { name: "まーぴょん", socialUrl: "https://x.com/UsuwoLaboratory", comment: "初参加なので楽しみof楽しみです～～", iconUrl: "https://pbs.twimg.com/profile_images/1505088834887122948/Lv2OSLbw_400x400.png" },
   { name: "メジエド", socialUrl: "https://x.com/m1edjed", comment: "今年も運営をやります。よろしくお願いいたします", iconUrl: "https://pbs.twimg.com/profile_images/1282726569346084864/Mi8ynuBx_400x400.jpg" },
-  { name: "みそぎちゃん"},
   { name: "SMACK17", socialUrl: "https://x.com/SMACK17", comment: "いっぱい遊ぶぞ～い" , iconUrl: "https://pbs.twimg.com/profile_images/1670147346171326466/bnrgIsRD_400x400.jpg" },
   { name: "asanoappy" },
   { name: "twoway" },
