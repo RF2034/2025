@@ -5,14 +5,17 @@
 ## 技術スタック
 
 - **フレームワーク**: Next.js 15 (App Router)
+- **UI**: React 19
 - **言語**: TypeScript
 - **スタイリング**: Tailwind CSS 4, DaisyUI
 - **データ取得**: Google Sheets API
 
 ## 前提条件
 
-- Node.js 18.18 以上
-- npm 9 以上（または pnpm / yarn / bun）
+- **Node.js**: 18.18 以上（Next.js 15 の要件。推奨は **20.x または 22.x LTS**）
+- **npm**: 9 以上（または pnpm / yarn / bun）
+
+`package.json` の `engines` フィールドと同じ範囲です。Volta や CI では Node のバージョンをここに合わせてください。
 
 ## 環境構築
 
@@ -84,18 +87,27 @@ npm run start
 | `npm run dev` | 開発サーバー起動（Turbopack） |
 | `npm run build` | 本番用ビルド |
 | `npm run start` | 本番サーバー起動 |
-| `npm run lint` | ESLint によるコードチェック |
+| `npm run lint` | ESLint によるコードチェック（`next lint`） |
+
+`next lint` は非推奨化が進んでおり、Next.js 16 以降では別の実行方法に切り替わる見込みです。移行時期が来たら ESLint を直接起動する設定に置き換えてください。
 
 ## プロジェクト構成
 
 ```
 src/
 ├── app/              # App Router ページ・API
-│   ├── 2025/         # メインページ
+│   ├── 2025/         # メインページ（公開導線 `/` はこちらへリダイレクト）
+│   ├── 2026/         # 2026 イベント向けシングルページ LP
 │   └── api/sheets/   # Google Sheets データ取得 API
 ├── components/       # React コンポーネント
+├── constants/
+│   └── 2026-site.ts  # 2026 LP の文言・画像URL・外部リンク（差し替えはここ）
 └── ...
 ```
+
+### ガッコウレイヴ 2026 LP
+
+`/2026` にイベント向けのシングルページを実装しています。文言・Googleフォーム URL・写真・地図 embed・SNS リンクは [`src/constants/2026-site.ts`](src/constants/2026-site.ts) に集約しているので、公開時はこのファイルを編集してください。
 
 ## 参考リンク
 
