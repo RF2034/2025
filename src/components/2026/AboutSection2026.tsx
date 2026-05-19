@@ -16,6 +16,9 @@ export default function AboutSection2026() {
 
           <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="section-2026__notice space-y-6 text-base leading-relaxed md:text-lg">
+              <p className="inline-flex w-fit items-center rounded-sm border border-[var(--2026-rule)] bg-[var(--2026-surface)] px-3 py-1 text-sm font-semibold md:text-base">
+                開催日：{SITE_2026.hero.eventDate}
+              </p>
               {SITE_2026.about.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
