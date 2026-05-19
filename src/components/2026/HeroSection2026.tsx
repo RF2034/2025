@@ -18,6 +18,9 @@ export default function HeroSection2026() {
           <p className="text-sm tracking-[0.2em] text-[var(--2026-hero-muted)] md:text-base">
             {SITE_2026.hero.tagline}
           </p>
+          <p className="text-sm font-medium tracking-[0.1em] text-[var(--2026-hero-text)] md:text-base">
+            {SITE_2026.hero.eventDate}
+          </p>
           <h1 className="font-hero-title text-4xl tracking-tight text-[var(--2026-hero-text)] md:text-6xl lg:text-7xl">
             {SITE_2026.hero.titleJa}
           </h1>

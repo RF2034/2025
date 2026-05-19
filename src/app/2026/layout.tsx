@@ -11,11 +11,30 @@ const display = Space_Grotesk({
 export const metadata: Metadata = {
   title: SITE_2026.meta.title,
   description: SITE_2026.meta.description,
+  alternates: {
+    canonical: "/2026",
+  },
   openGraph: {
     title: SITE_2026.meta.title,
     description: SITE_2026.meta.description,
+    url: "https://gakkou-rave.com/2026",
+    siteName: "ガッコウレイヴ2026",
     locale: "ja_JP",
     type: "website",
+    images: [
+      {
+        url: "https://logos.schoolrave.net/cdn-cgi/image/f=webp/schoolrave_OGP_B.png",
+        width: 1200,
+        height: 630,
+        alt: "ガッコウレイヴ2026 OGP画像",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_2026.meta.title,
+    description: SITE_2026.meta.description,
+    images: ["https://logos.schoolrave.net/cdn-cgi/image/f=webp/schoolrave_OGP_B.png"],
   },
 };
 

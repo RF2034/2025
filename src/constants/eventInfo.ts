@@ -1,5 +1,5 @@
 export const EVENT_INFO = {
-  title: "ガッコウレイヴ2025",
+  title: "ガッコウレイヴ",
   dates: "11/22, 23, 24（土, 日, 月祝）",
   venue: {
     name: "泊まれる学校 さる小",
