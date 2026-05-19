@@ -1,23 +1,33 @@
-import Link from "next/link";
+import AboutSection2026 from "@/components/2026/AboutSection2026";
+import AccessSection2026 from "@/components/2026/AccessSection2026";
+import EventSection2026 from "@/components/2026/EventSection2026";
+import HeroSection2026 from "@/components/2026/HeroSection2026";
+import JoinFaqSection2026 from "@/components/2026/JoinFaqSection2026";
+import LoadingGate2026 from "@/components/2026/LoadingGate2026";
+import MidCta2026 from "@/components/2026/MidCta2026";
+import PriceSection2026 from "@/components/2026/PriceSection2026";
+import SiteFooter2026 from "@/components/2026/SiteFooter2026";
+import SiteHeader2026 from "@/components/2026/SiteHeader2026";
+import StayFoodSection2026 from "@/components/2026/StayFoodSection2026";
+import VenueSection2026 from "@/components/2026/VenueSection2026";
 
-export default function Home2026Placeholder() {
+export default function Home2026Page() {
   return (
-    <div className="min-h-screen bg-base-200 text-base-content flex flex-col items-center justify-center px-4">
-      <div className="max-w-xl text-center space-y-6">
-        <h1 className="text-4xl font-bold">ガッコウレイヴ 2026</h1>
-        <p className="text-lg">
-          2026 年版サイトは現在準備中です。
-        </p>
-        <p>
-          最新の開催情報は、現在公開中の
-          <br />
-          <Link href="/2025" className="link link-primary font-semibold">
-            ガッコウレイヴ 2025 サイト
-          </Link>
-          をご覧ください。
-        </p>
-      </div>
+    <div className="min-h-screen bg-[var(--2026-bg)] text-[var(--2026-ink)] lg:pt-[4.25rem]">
+      <LoadingGate2026 />
+      <SiteHeader2026 />
+      <main>
+        <HeroSection2026 />
+        <AboutSection2026 />
+        <EventSection2026 />
+        <MidCta2026 />
+        <VenueSection2026 />
+        <StayFoodSection2026 />
+        <AccessSection2026 />
+        <PriceSection2026 />
+        <JoinFaqSection2026 />
+      </main>
+      <SiteFooter2026 />
     </div>
   );
 }
-
