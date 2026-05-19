@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         url: "https://logos.schoolrave.net/cdn-cgi/image/f=webp/schoolrave_OGP_B.png",
         width: 1200,
         height: 630,
-        alt: "ガッコウレイヴ2025 OGP画像"
+        alt: "ガッコウレイヴ OGP画像"
       }
     ]
   }
