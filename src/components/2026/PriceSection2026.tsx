@@ -20,8 +20,14 @@ export default function PriceSection2026() {
             <p className="mt-6 font-display-en text-4xl md:text-5xl">
               {SITE_2026.price.amountNote}
             </p>
+            <p className="mt-4 text-base leading-relaxed text-[var(--2026-muted)]">
+              {SITE_2026.price.scalingNote}
+            </p>
             <p className="mt-6 text-base leading-relaxed text-[var(--2026-muted)]">
               {SITE_2026.price.note}
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-[var(--2026-muted)]">
+              {SITE_2026.price.lastYearReference}
             </p>
             <div className="mt-10 border border-[var(--2026-rule)] bg-[var(--2026-surface)] px-6 py-6 text-left shadow-[3px_4px_0_var(--2026-shadow)]">
               <p className="text-sm tracking-[0.2em] text-[var(--2026-muted)]">

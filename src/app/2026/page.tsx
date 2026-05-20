@@ -1,3 +1,4 @@
+import HashScrollRestore2026 from "@/components/2026/HashScrollRestore2026";
 import AboutSection2026 from "@/components/2026/AboutSection2026";
 import AccessSection2026 from "@/components/2026/AccessSection2026";
 import EventSection2026 from "@/components/2026/EventSection2026";
@@ -15,6 +16,7 @@ export default function Home2026Page() {
   return (
     <div className="min-h-screen bg-[var(--2026-bg)] text-[var(--2026-ink)] lg:pt-[4.25rem]">
       <LoadingGate2026 />
+      <HashScrollRestore2026 />
       <SiteHeader2026 />
       <main>
         <HeroSection2026 />
