@@ -2,22 +2,63 @@
 
 import { SITE_2026 } from "@/constants/2026-site";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const SCROLL_THRESHOLD = 24;
+const MOBILE_REVEAL_OFFSET = 8;
 
 export default function SiteHeader2026() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileVisible, setMobileVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      setScrolled(currentY > SCROLL_THRESHOLD);
+
+      if (window.matchMedia("(min-width: 1024px)").matches) {
+        lastScrollY.current = currentY;
+        return;
+      }
+
+      if (open) {
+        setMobileVisible(true);
+        lastScrollY.current = currentY;
+        return;
+      }
+
+      if (currentY <= SCROLL_THRESHOLD) {
+        setMobileVisible(true);
+      } else if (currentY > lastScrollY.current + MOBILE_REVEAL_OFFSET) {
+        setMobileVisible(false);
+      } else if (currentY < lastScrollY.current - MOBILE_REVEAL_OFFSET) {
+        setMobileVisible(true);
+      }
+
+      lastScrollY.current = currentY;
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [open]);
 
   const desktopNavClass = scrolled
     ? "site-header-2026 site-header-2026--scrolled hidden lg:flex fixed top-0 left-0 right-0 z-50"
     : "site-header-2026 hidden lg:flex fixed top-0 left-0 right-0 z-50";
+
+  const mobileHeaderClass = [
+    "site-header-2026",
+    "site-header-2026--mobile",
+    "site-header-2026--mobile-reveal",
+    "lg:hidden",
+    "fixed top-0 left-0 right-0 z-40 w-full",
+    mobileVisible || open
+      ? "site-header-2026--mobile-visible"
+      : "site-header-2026--mobile-hidden",
+  ].join(" ");
 
   return (
     <>
@@ -47,8 +88,8 @@ export default function SiteHeader2026() {
         </div>
       </header>
 
-      {/* モバイル: 非固定・ハンバーガー（design: スマホは非固定ナビ） */}
-      <header className="site-header-2026 site-header-2026--mobile lg:hidden relative z-40 w-full border-b border-transparent">
+      {/* モバイル: スクロールアップで一時表示 */}
+      <header className={mobileHeaderClass}>
         <div className="site-header-2026__inner site-header-2026__inner--mobile">
           <Link href="/2026#top" className="site-header-2026__logo font-display-en">
             {SITE_2026.hero.titleJa}

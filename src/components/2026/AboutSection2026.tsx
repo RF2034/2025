@@ -3,6 +3,8 @@ import Image from "next/image";
 import RevealOnScroll from "./RevealOnScroll";
 
 export default function AboutSection2026() {
+  const eventDate = SITE_2026.hero.eventDate;
+
   return (
     <section id="about" className="section-2026">
       <div className="section-2026__shell mx-auto max-w-6xl px-4 md:px-8">
@@ -16,9 +18,15 @@ export default function AboutSection2026() {
 
           <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="section-2026__notice space-y-6 text-base leading-relaxed md:text-lg">
-              <p className="inline-flex w-fit items-center rounded-sm border border-[var(--2026-rule)] bg-[var(--2026-surface)] px-3 py-1 text-sm font-semibold md:text-base">
-                開催日：{SITE_2026.hero.eventDate}
-              </p>
+              <div className="section-2026__about-intro">
+                <p>
+                  <span className="font-display-en section-2026__about-date">
+                    {eventDate}
+                  </span>
+                  に、{SITE_2026.about.introBody}
+                </p>
+                <div className="section-2026__about-date-rule" aria-hidden />
+              </div>
               {SITE_2026.about.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}

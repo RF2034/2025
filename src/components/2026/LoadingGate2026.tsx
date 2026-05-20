@@ -38,7 +38,7 @@ export default function LoadingGate2026() {
       aria-busy="true"
     >
       <div className="loading-gate-2026__inner">
-        <p className="loading-gate-2026__chalk loading-gate-2026__chalk--main">
+        <p className="font-hero-title loading-gate-2026__chalk loading-gate-2026__chalk--main">
           {SITE_2026.loading.chalkTitle}
         </p>
         <p className="loading-gate-2026__chalk loading-gate-2026__chalk--sub">
