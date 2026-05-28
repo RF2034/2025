@@ -38,6 +38,8 @@ export const metadata: Metadata = {
   },
 };
 
+const LOADING_GATE_SCRIPT = `(function(){try{if(!sessionStorage.getItem("gakkorave2026-loading-done")){document.documentElement.classList.add("loading-gate-pending")}}catch(e){}})();`;
+
 export default function Layout2026({
   children,
 }: Readonly<{
@@ -53,7 +55,26 @@ export default function Layout2026({
         href="https://fonts.googleapis.com/css2?family=LINE+Seed+JP:wght@400;700&family=Stick&display=swap"
         rel="stylesheet"
       />
-      <div className={`site-2026 ${display.variable}`}>{children}</div>
+      <div className={`site-2026 ${display.variable}`}>
+        {/* React ハイドレーション前に初回訪問判定（トップページのフラッシュ防止） */}
+        <script dangerouslySetInnerHTML={{ __html: LOADING_GATE_SCRIPT }} />
+        <div
+          id="loading-gate-2026-fallback"
+          className="loading-gate-2026"
+          aria-live="polite"
+          aria-busy="true"
+        >
+          <div className="loading-gate-2026__inner">
+            <p className="font-hero-title loading-gate-2026__chalk loading-gate-2026__chalk--main">
+              {SITE_2026.loading.chalkTitle}
+            </p>
+            <p className="loading-gate-2026__chalk loading-gate-2026__chalk--sub">
+              {SITE_2026.loading.subtitle}
+            </p>
+          </div>
+        </div>
+        {children}
+      </div>
     </>
   );
 }
