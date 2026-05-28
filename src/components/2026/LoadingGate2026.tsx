@@ -1,50 +1,82 @@
 "use client";
 
-import { SITE_2026 } from "@/constants/2026-site";
-import { useEffect, useState } from "react";
+import { useEffect, type ReactNode } from "react";
 
 const STORAGE_KEY = "gakkorave2026-loading-done";
+const LOADING_MS = 2200;
+const EXIT_MS = 1000;
 
-export default function LoadingGate2026() {
-  const [phase, setPhase] = useState<"check" | "show" | "hide">("check");
+function dismissLoadingGate(animate: boolean) {
+  const root = document.documentElement;
+  const fallback = document.getElementById("loading-gate-2026-fallback");
 
+  if (!fallback || fallback.classList.contains("loading-gate-2026--dismissed")) {
+    root.classList.remove("loading-gate-pending");
+    root.classList.remove("loading-gate-exiting");
+    return;
+  }
+
+  const finish = () => {
+    fallback.classList.add("loading-gate-2026--dismissed");
+    fallback.classList.remove("loading-gate-2026--exiting");
+    root.classList.remove("loading-gate-exiting");
+  };
+
+  if (!animate) {
+    root.classList.remove("loading-gate-pending");
+    finish();
+    return;
+  }
+
+  let done = false;
+  const complete = () => {
+    if (done) return;
+    done = true;
+    finish();
+  };
+
+  const onEnd = (e: TransitionEvent) => {
+    if (e.target !== fallback || e.propertyName !== "opacity") return;
+    fallback.removeEventListener("transitionend", onEnd);
+    complete();
+  };
+
+  fallback.addEventListener("transitionend", onEnd);
+
+  root.classList.add("loading-gate-exiting");
+  root.classList.remove("loading-gate-pending");
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      fallback.classList.add("loading-gate-2026--exiting");
+    });
+  });
+
+  window.setTimeout(complete, EXIT_MS + 120);
+}
+
+export default function LoadingGate2026({ children }: { children: ReactNode }) {
   useEffect(() => {
     try {
       if (sessionStorage.getItem(STORAGE_KEY)) {
-        setPhase("hide");
+        dismissLoadingGate(false);
         return;
       }
     } catch {
       /* ignore */
     }
-    setPhase("show");
+
     const t = window.setTimeout(() => {
       try {
         sessionStorage.setItem(STORAGE_KEY, "1");
       } catch {
         /* ignore */
       }
-      setPhase("hide");
-    }, 2200);
+      dismissLoadingGate(true);
+    }, LOADING_MS);
+
     return () => window.clearTimeout(t);
   }, []);
 
-  if (phase !== "show") return null;
-
-  return (
-    <div
-      className="loading-gate-2026"
-      aria-live="polite"
-      aria-busy="true"
-    >
-      <div className="loading-gate-2026__inner">
-        <p className="font-hero-title loading-gate-2026__chalk loading-gate-2026__chalk--main">
-          {SITE_2026.loading.chalkTitle}
-        </p>
-        <p className="loading-gate-2026__chalk loading-gate-2026__chalk--sub">
-          {SITE_2026.loading.subtitle}
-        </p>
-      </div>
-    </div>
-  );
+  return children;
 }
